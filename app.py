@@ -1,4 +1,4 @@
-```python
+
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -445,4 +445,4 @@ st.caption(
     "Academic project demo | Built with Python, Pandas, "
     "Scikit-learn and Streamlit"
 )
-```
+
