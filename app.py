@@ -1,4 +1,4 @@
-```python
+
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -1084,4 +1084,4 @@ elif page == "Download Data":
     st.success(
         f"{len(filtered_df)} records are currently selected."
     )
-```
+
