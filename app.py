@@ -66,7 +66,7 @@ if uploaded_file is not None:
     except Exception as e:
         st.error("Unable to read this CSV file.")
         st.write(str(e))
-```
+
 DATA_FILE = Path(__file__).parent / "online_job_listings_salary_dataset.csv"
 FEATURES = ["Job_Title", "Location", "Job_Type", "Experience_Level", "Experience_Years", "Education", "Skills", "Posting_Age_Days"]
 TARGET = "Salary_LPA"
