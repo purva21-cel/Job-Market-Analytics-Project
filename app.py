@@ -5,49 +5,96 @@ import numpy as np
 import matplotlib.pyplot as plt
 import re
 
+
 st.set_page_config(
     page_title="Job Market Analytics",
     page_icon="💼",
-    layout="wide"
+    layout="wide",
+    initial_sidebar_state="expanded"
 )
+
+
 
 st.markdown("""
 <style>
 .stApp {
-    background-color: #f5f7fb;
+    background-color: #f4f7fb;
+    color: #1f2937;
 }
-h1 {
-    color: #17365d;
+
+[data-testid="stHeader"] {
+    background-color: #f4f7fb;
 }
-h2, h3 {
-    color: #24476b;
+
+[data-testid="stAppViewContainer"] {
+    background-color: #f4f7fb;
 }
-div[data-testid="stMetric"] {
-    background-color: white;
-    padding: 15px;
-    border-radius: 10px;
-    border: 1px solid #e1e6ef;
+
+h1, h2, h3, h4 {
+    color: #17365d !important;
 }
+
+.stMarkdown, .stMarkdown p, .stMarkdown li {
+    color: #263445;
+}
+
+[data-testid="stSidebar"] {
+    background-color: #e8edf5;
+}
+
+[data-testid="stSidebar"] * {
+    color: #1f2937;
+}
+
+[data-testid="stMetric"] {
+    background-color: #ffffff;
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid #dce4ef;
+}
+
+[data-testid="stMetricLabel"] {
+    color: #526174 !important;
+}
+
+[data-testid="stMetricValue"] {
+    color: #17365d !important;
+}
+
 .stButton > button {
     background-color: #17365d;
-    color: white;
+    color: white !important;
     border-radius: 8px;
+    border: none;
+    padding: 8px 16px;
+}
+
+.stButton > button:hover {
+    background-color: #28558a;
+    color: white !important;
+}
+
+[data-testid="stDataFrame"] {
+    background-color: white;
+    border-radius: 8px;
+}
+
+div[data-testid="stAlert"] p {
+    color: inherit;
 }
 </style>
 """, unsafe_allow_html=True)
 
 
-# Application title
 
 st.title("💼 Job Market Analytics Dashboard")
 
-st.write(
-    "Explore job opportunities, salary trends, "
-    "hiring companies, locations, and in-demand skills."
+st.markdown(
+    "Explore job opportunities, salary trends, hiring companies, "
+    "locations, and in-demand skills."
 )
 
 
-# Dataset upload
 
 uploaded_file = st.sidebar.file_uploader(
     "Upload Your Own Dataset",
@@ -56,83 +103,88 @@ uploaded_file = st.sidebar.file_uploader(
 
 if uploaded_file is None:
 
-    st.info("Upload a job-market CSV file to access the dashboard.")
+    st.info("Please upload your job-market CSV dataset to begin.")
 
-    st.subheader("Welcome to Job Market Analytics")
+    st.markdown("## Welcome to Job Market Analytics")
 
     col1, col2, col3 = st.columns(3)
 
     col1.metric("Analysis Type", "Job Market")
-    col2.metric("Input Format", "CSV")
+    col2.metric("Supported Format", "CSV")
     col3.metric("Dashboard", "Interactive")
 
     st.markdown("""
-    ### What can you explore?
+    ### Features
 
-    - Job market overview
-    - Job titles and employment demand
-    - Salary distribution and comparisons
-    - Most frequently requested skills
-    - Company hiring activity
-    - Job opportunities by location
-    - Job posting trends
-    - Filtered dataset downloads
+    - 📊 Job market overview
+    - 💼 Job title analysis
+    - 💰 Salary distribution and comparisons
+    - 🧠 In-demand skills analysis
+    - 🏢 Company hiring analysis
+    - 📍 Location analysis
+    - 📈 Job posting trends
+    - 📥 Download filtered datasets
 
-    ### Getting started
+    ### How to use
 
-    1. Upload your job-market CSV dataset.
+    1. Upload your own CSV dataset.
     2. Review the dataset and its columns.
-    3. Apply filters to explore relevant opportunities.
-    4. Navigate between analysis pages.
-    5. Download filtered records when required.
+    3. Filter jobs by title, company, location, or work type.
+    4. Explore the different analytics pages.
+    5. Download your filtered data.
     """)
 
     st.stop()
 
 
-# Load uploaded dataset
+
 
 try:
     df = pd.read_csv(uploaded_file)
-except Exception as e:
-    st.error(f"Could not read the CSV file: {e}")
-    st.stop()
 
+except Exception as e:
+    st.error(f"Unable to read the CSV file: {e}")
+    st.stop()
 
 if df.empty:
     st.error("The uploaded dataset is empty.")
     st.stop()
 
-
 # Clean column names
 
 df.columns = df.columns.astype(str).str.strip()
+
+# Remove duplicate column names
+
 df = df.loc[:, ~df.columns.duplicated()]
+
+# Remove duplicate records
+
 df = df.drop_duplicates().reset_index(drop=True)
 
+if len(df.columns) == 0:
+    st.error("No valid columns were found in the uploaded file.")
+    st.stop()
 
-# Detect common column names
 
-def find_column(names):
 
-    for col in df.columns:
+def find_column(possible_names):
 
-        normalized = re.sub(
+    normalized_names = {
+        re.sub(r"[^a-z0-9]", "", name.lower())
+        for name in possible_names
+    }
+
+    for column in df.columns:
+
+        normalized_column = re.sub(
             r"[^a-z0-9]",
             "",
-            col.lower()
+            column.lower()
         )
 
-        for name in names:
-
-            target = re.sub(
-                r"[^a-z0-9]",
-                "",
-                name.lower()
-            )
-
-            if normalized == target:
-                return col
+        if normalized_column in normalized_names:
+            return column
 
     return None
 
@@ -143,21 +195,24 @@ title_col = find_column([
     "job",
     "position",
     "role",
-    "designation"
+    "designation",
+    "job_role"
 ])
 
 company_col = find_column([
     "company",
     "company_name",
     "employer",
-    "organization"
+    "organization",
+    "organisation"
 ])
 
 location_col = find_column([
     "location",
     "job_location",
     "city",
-    "work_location"
+    "work_location",
+    "job_city"
 ])
 
 salary_col = find_column([
@@ -167,7 +222,9 @@ salary_col = find_column([
     "annual_salary",
     "salary_in_usd",
     "salary_yearly",
-    "estimated_salary"
+    "estimated_salary",
+    "salary_estimate",
+    "salary_usd"
 ])
 
 salary_min_col = find_column([
@@ -188,7 +245,8 @@ skills_col = find_column([
     "skills",
     "required_skills",
     "skill",
-    "technical_skills"
+    "technical_skills",
+    "skill_set"
 ])
 
 date_col = find_column([
@@ -197,7 +255,8 @@ date_col = find_column([
     "posted_date",
     "job_posted_date",
     "created_at",
-    "publication_date"
+    "publication_date",
+    "post_date"
 ])
 
 work_type_col = find_column([
@@ -205,18 +264,20 @@ work_type_col = find_column([
     "employment_type",
     "job_type",
     "work_mode",
-    "remote_type"
+    "remote_type",
+    "job_schedule"
 ])
 
 experience_col = find_column([
     "experience_level",
     "experience",
     "seniority",
-    "years_experience"
+    "years_experience",
+    "experience_required"
 ])
 
 
-# Convert salary values to numeric where possible
+
 
 def clean_salary(series):
 
@@ -229,13 +290,14 @@ def clean_salary(series):
         .str.replace("€", "", regex=False)
         .str.replace("USD", "", regex=False)
         .str.replace("INR", "", regex=False)
+        .str.replace(" ", "", regex=False)
         .str.replace(r"[^\d.\-]", "", regex=True)
     )
 
     return pd.to_numeric(cleaned, errors="coerce")
 
 
-if salary_col:
+if salary_col is not None:
 
     df[salary_col] = clean_salary(df[salary_col])
 
@@ -261,9 +323,8 @@ elif salary_max_col:
     salary_col = salary_max_col
 
 
-# Convert date column
 
-if date_col:
+if date_col is not None:
 
     df[date_col] = pd.to_datetime(
         df[date_col],
@@ -271,12 +332,19 @@ if date_col:
     )
 
 
-# Sidebar navigation
+# --------------------------------------------------
+# SIDEBAR INFORMATION
+# --------------------------------------------------
 
 st.sidebar.success("Dataset uploaded successfully!")
 
-st.sidebar.write("Records:", len(df))
-st.sidebar.write("Columns:", len(df.columns))
+st.sidebar.write("Total Records:", len(df))
+st.sidebar.write("Total Columns:", len(df.columns))
+
+
+# --------------------------------------------------
+# NAVIGATION
+# --------------------------------------------------
 
 page = st.sidebar.radio(
     "Navigation",
@@ -294,7 +362,6 @@ page = st.sidebar.radio(
 )
 
 
-# Sidebar filters
 
 st.sidebar.divider()
 st.sidebar.subheader("Dashboard Filters")
@@ -302,7 +369,7 @@ st.sidebar.subheader("Dashboard Filters")
 filtered_df = df.copy()
 
 
-def filter_column(data, column, label):
+def apply_filter(data, column, label):
 
     if column is None:
         return data
@@ -320,48 +387,209 @@ def filter_column(data, column, label):
     if not values:
         return data
 
-    selected = st.sidebar.multiselect(
+    selected_values = st.sidebar.multiselect(
         label,
-        values,
-        default=[]
+        options=values,
+        default=[],
+        key="filter_" + column
     )
 
-    if selected:
+    if selected_values:
+
         data = data[
-            data[column].astype(str).isin(selected)
+            data[column].astype(str).isin(selected_values)
         ]
 
     return data
 
 
-filtered_df = filter_column(
+filtered_df = apply_filter(
     filtered_df,
     title_col,
     "Job Title"
 )
 
-filtered_df = filter_column(
+filtered_df = apply_filter(
     filtered_df,
     company_col,
     "Company"
 )
 
-filtered_df = filter_column(
+filtered_df = apply_filter(
     filtered_df,
     location_col,
     "Location"
 )
 
-filtered_df = filter_column(
+filtered_df = apply_filter(
     filtered_df,
     work_type_col,
     "Work Type"
 )
 
 
-# Dataset explorer
 
-if page == "Dataset Explorer":
+
+def show_category_chart(data, column, title, limit=15):
+
+    st.subheader(title)
+
+    if column is None:
+        st.warning("The required column was not found.")
+        return
+
+    counts = (
+        data[column]
+        .dropna()
+        .astype(str)
+        .str.strip()
+    )
+
+    counts = counts[counts != ""].value_counts().head(limit)
+
+    if counts.empty:
+        st.info("No data is available for this chart.")
+        return
+
+    chart_data = counts.rename_axis(column).reset_index(
+        name="Job Count"
+    )
+
+    st.bar_chart(
+        chart_data.set_index(column)["Job Count"]
+    )
+
+    with st.expander("View chart data"):
+        st.dataframe(chart_data, use_container_width=True)
+
+
+-
+
+def get_skill_counts(data):
+
+    if skills_col is None:
+        return pd.Series(dtype="int64")
+
+    skill_list = []
+
+    for value in data[skills_col].dropna():
+
+        for skill in re.split(r"[,;|]", str(value)):
+
+            skill = skill.strip()
+
+            if skill:
+                skill_list.append(skill)
+
+    if not skill_list:
+        return pd.Series(dtype="int64")
+
+    return pd.Series(skill_list).value_counts()
+
+
+
+
+if page == "Dashboard Overview":
+
+    st.header("📊 Job Market Overview")
+
+    col1, col2, col3, col4 = st.columns(4)
+
+    col1.metric(
+        "Total Job Postings",
+        f"{len(filtered_df):,}"
+    )
+
+    company_count = (
+        filtered_df[company_col].nunique()
+        if company_col else 0
+    )
+
+    location_count = (
+        filtered_df[location_col].nunique()
+        if location_col else 0
+    )
+
+    title_count = (
+        filtered_df[title_col].nunique()
+        if title_col else 0
+    )
+
+    col2.metric("Companies", f"{company_count:,}")
+    col3.metric("Locations", f"{location_count:,}")
+    col4.metric("Unique Job Titles", f"{title_count:,}")
+
+    if salary_col is not None:
+
+        salaries = filtered_df[salary_col].dropna()
+
+        if not salaries.empty:
+
+            st.subheader("💰 Salary Overview")
+
+            col1, col2, col3 = st.columns(3)
+
+            col1.metric(
+                "Average Salary",
+                f"{salaries.mean():,.2f}"
+            )
+
+            col2.metric(
+                "Median Salary",
+                f"{salaries.median():,.2f}"
+            )
+
+            col3.metric(
+                "Maximum Salary",
+                f"{salaries.max():,.2f}"
+            )
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+
+        show_category_chart(
+            filtered_df,
+            title_col,
+            "💼 Top Job Titles",
+            10
+        )
+
+    with col2:
+
+        show_category_chart(
+            filtered_df,
+            company_col,
+            "🏢 Top Hiring Companies",
+            10
+        )
+
+    st.subheader("🧠 Most Common Skills")
+
+    skill_counts = get_skill_counts(filtered_df)
+
+    if not skill_counts.empty:
+
+        st.bar_chart(skill_counts.head(15))
+
+    else:
+
+        st.info(
+            "A skills column containing skill names was not found."
+        )
+
+    if experience_col is not None:
+
+        show_category_chart(
+            filtered_df,
+            experience_col,
+            "Experience Level Distribution",
+            10
+        )
+
+
+
+elif page == "Dataset Explorer":
 
     st.header("📋 Dataset Explorer")
 
@@ -369,6 +597,7 @@ if page == "Dataset Explorer":
 
     col1.metric("Total Records", len(filtered_df))
     col2.metric("Total Columns", len(filtered_df.columns))
+
     col3.metric(
         "Missing Values",
         int(filtered_df.isnull().sum().sum())
@@ -390,7 +619,10 @@ if page == "Dataset Explorer":
         "Unique Values": filtered_df.nunique().values
     })
 
-    st.dataframe(info_df, use_container_width=True)
+    st.dataframe(
+        info_df,
+        use_container_width=True
+    )
 
     st.subheader("Statistical Summary")
 
@@ -399,159 +631,28 @@ if page == "Dataset Explorer":
         use_container_width=True
     )
 
-    st.subheader("Missing Values")
+    st.subheader("Missing Values by Column")
 
     missing = filtered_df.isnull().sum()
-    missing = missing[missing > 0]
+    missing = missing[missing > 0].sort_values(ascending=False)
 
-    if len(missing) > 0:
-        st.dataframe(
-            missing.rename("Missing Count").to_frame()
-        )
+    if not missing.empty:
+
+        st.bar_chart(missing)
+
     else:
-        st.success("No missing values found.")
 
+        st.success("No missing values were found.")
 
-# Dashboard overview
+    st.subheader("Duplicate Records")
 
-elif page == "Dashboard Overview":
-
-    st.header("📊 Job Market Overview")
-
-    col1, col2, col3, col4 = st.columns(4)
-
-    col1.metric(
-        "Total Job Postings",
-        f"{len(filtered_df):,}"
+    st.write(
+        "Duplicate records remaining after initial cleaning:",
+        int(filtered_df.duplicated().sum())
     )
 
-    if company_col:
-        company_count = filtered_df[company_col].nunique()
-    else:
-        company_count = 0
-
-    col2.metric(
-        "Companies",
-        f"{company_count:,}"
-    )
-
-    if location_col:
-        location_count = filtered_df[location_col].nunique()
-    else:
-        location_count = 0
-
-    col3.metric(
-        "Locations",
-        f"{location_count:,}"
-    )
-
-    if title_col:
-        role_count = filtered_df[title_col].nunique()
-    else:
-        role_count = 0
-
-    col4.metric(
-        "Unique Job Titles",
-        f"{role_count:,}"
-    )
-
-    if salary_col:
-
-        average_salary = filtered_df[salary_col].mean()
-
-        st.subheader("Salary Overview")
-
-        if pd.notna(average_salary):
-
-            st.metric(
-                "Average Salary",
-                f"{average_salary:,.2f}"
-            )
-
-    col1, col2 = st.columns(2)
-
-    with col1:
-
-        st.subheader("Top Job Titles")
-
-        if title_col:
-
-            top_titles = (
-                filtered_df[title_col]
-                .dropna()
-                .astype(str)
-                .value_counts()
-                .head(10)
-            )
-
-            if not top_titles.empty:
-                st.bar_chart(top_titles)
-
-            else:
-                st.info("No job-title data available.")
-
-        else:
-            st.info("No job-title column was detected.")
-
-    with col2:
-
-        st.subheader("Top Hiring Companies")
-
-        if company_col:
-
-            top_companies = (
-                filtered_df[company_col]
-                .dropna()
-                .astype(str)
-                .value_counts()
-                .head(10)
-            )
-
-            if not top_companies.empty:
-                st.bar_chart(top_companies)
-
-            else:
-                st.info("No company data available.")
-
-        else:
-            st.info("No company column was detected.")
-
-    st.subheader("Most Common Skills")
-
-    if skills_col:
-
-        all_skills = []
-
-        for value in filtered_df[skills_col].dropna():
-
-            skills = re.split(
-                r"[,;|]",
-                str(value)
-            )
-
-            for skill in skills:
-
-                skill = skill.strip()
-
-                if skill:
-                    all_skills.append(skill)
-
-        if all_skills:
-
-            skill_counts = pd.Series(
-                all_skills
-            ).value_counts().head(15)
-
-            st.bar_chart(skill_counts)
-
-        else:
-            st.info("No skills were found.")
-
-    else:
-        st.info("No skills column was detected.")
 
 
-# Job analysis
 
 elif page == "Job Analysis":
 
@@ -560,8 +661,8 @@ elif page == "Job Analysis":
     if title_col is None:
 
         st.warning(
-            "A job title column could not be detected. "
-            "Check your dataset column names."
+            "No job title column was detected. "
+            "Check the column names in Dataset Explorer."
         )
 
     else:
@@ -570,18 +671,51 @@ elif page == "Job Analysis":
             filtered_df[title_col]
             .dropna()
             .astype(str)
-            .value_counts()
+            .str.strip()
+        )
+
+        job_counts = job_counts[
+            job_counts != ""
+        ].value_counts()
+
+        col1, col2 = st.columns(2)
+
+        col1.metric(
+            "Unique Job Titles",
+            len(job_counts)
+        )
+
+        col2.metric(
+            "Most Common Job Title Count",
+            int(job_counts.iloc[0]) if not job_counts.empty else 0
         )
 
         st.subheader("Job Title Distribution")
 
-        if len(job_counts) > 0:
-            st.bar_chart(job_counts.head(20))
+        if not job_counts.empty:
+
+            st.bar_chart(
+                job_counts.head(20)
+            )
+
+            with st.expander("View job title counts"):
+
+                st.dataframe(
+                    job_counts.rename(
+                        "Number of Postings"
+                    ).to_frame(),
+                    use_container_width=True
+                )
+
+        else:
+
+            st.info("No job titles are available.")
 
         st.subheader("Search Job Titles")
 
         search = st.text_input(
-            "Enter a keyword to search job titles"
+            "Enter a job title or keyword",
+            key="job_search"
         )
 
         jobs = filtered_df.copy()
@@ -599,17 +733,17 @@ elif page == "Job Analysis":
                 )
             ]
 
+        st.write("Matching job postings:", len(jobs))
+
         st.dataframe(
             jobs,
             use_container_width=True
         )
 
-        st.write(
-            f"Matching records: {len(jobs)}"
-        )
 
-
-# Salary analysis
+# --------------------------------------------------
+# SALARY ANALYSIS
+# --------------------------------------------------
 
 elif page == "Salary Analysis":
 
@@ -624,9 +758,10 @@ elif page == "Salary Analysis":
 
     else:
 
-        salary_data = filtered_df[
-            salary_col
-        ].dropna()
+        salary_data = pd.to_numeric(
+            filtered_df[salary_col],
+            errors="coerce"
+        ).dropna()
 
         salary_data = salary_data[
             np.isfinite(salary_data)
@@ -634,13 +769,11 @@ elif page == "Salary Analysis":
 
         if salary_data.empty:
 
-            st.warning(
-                "No valid numeric salary values are available."
-            )
+            st.warning("No valid salary values were found.")
 
         else:
 
-            col1, col2, col3 = st.columns(3)
+            col1, col2, col3, col4 = st.columns(4)
 
             col1.metric(
                 "Average Salary",
@@ -653,25 +786,35 @@ elif page == "Salary Analysis":
             )
 
             col3.metric(
+                "Minimum Salary",
+                f"{salary_data.min():,.2f}"
+            )
+
+            col4.metric(
                 "Maximum Salary",
                 f"{salary_data.max():,.2f}"
             )
 
             st.subheader("Salary Distribution")
 
-            fig, ax = plt.subplots()
+            fig, ax = plt.subplots(figsize=(10, 5))
 
             ax.hist(
                 salary_data,
-                bins=30,
+                bins=min(30, max(5, salary_data.nunique())),
                 edgecolor="black"
             )
 
             ax.set_xlabel(salary_col)
-            ax.set_ylabel("Number of Records")
-            ax.set_title("Salary Distribution")
+            ax.set_ylabel("Number of Job Postings")
+            ax.set_title("Distribution of Salaries")
+
+            ax.grid(axis="y", alpha=0.25)
+
+            fig.tight_layout()
 
             st.pyplot(fig)
+
             plt.close(fig)
 
             st.subheader("Salary Statistics")
@@ -679,7 +822,8 @@ elif page == "Salary Analysis":
             st.dataframe(
                 salary_data.describe().to_frame(
                     "Salary Statistics"
-                )
+                ),
+                use_container_width=True
             )
 
             if title_col:
@@ -714,8 +858,22 @@ elif page == "Salary Analysis":
                 if not salary_by_location.empty:
                     st.bar_chart(salary_by_location)
 
+            if work_type_col:
 
-# Skills analysis
+                st.subheader("Average Salary by Work Type")
+
+                salary_by_work_type = (
+                    filtered_df
+                    .dropna(subset=[salary_col, work_type_col])
+                    .groupby(work_type_col)[salary_col]
+                    .mean()
+                    .sort_values(ascending=False)
+                )
+
+                if not salary_by_work_type.empty:
+                    st.bar_chart(salary_by_work_type)
+
+
 
 elif page == "Skills Analysis":
 
@@ -725,43 +883,29 @@ elif page == "Skills Analysis":
 
         st.warning(
             "No skills column was detected. "
-            "Use a dataset containing a Skills or Required Skills column."
+            "Use a dataset containing Skills or Required Skills."
         )
 
     else:
 
-        skill_list = []
+        skill_counts = get_skill_counts(filtered_df)
 
-        for value in filtered_df[skills_col].dropna():
+        if skill_counts.empty:
 
-            skills = re.split(
-                r"[,;|]",
-                str(value)
-            )
+            st.info("No skill information is available.")
 
-            for skill in skills:
-
-                skill = skill.strip()
-
-                if skill:
-                    skill_list.append(skill)
-
-        if skill_list:
-
-            skill_counts = pd.Series(
-                skill_list
-            ).value_counts()
+        else:
 
             col1, col2 = st.columns(2)
 
             col1.metric(
                 "Unique Skills",
-                skill_counts.size
+                len(skill_counts)
             )
 
             col2.metric(
-                "Skill Mentions",
-                len(skill_list)
+                "Total Skill Mentions",
+                int(skill_counts.sum())
             )
 
             st.subheader("Top 20 In-Demand Skills")
@@ -773,7 +917,8 @@ elif page == "Skills Analysis":
             st.subheader("Search for a Skill")
 
             skill_search = st.text_input(
-                "Enter a skill"
+                "Enter a skill name",
+                key="skill_search"
             )
 
             if skill_search:
@@ -789,26 +934,20 @@ elif page == "Skills Analysis":
                 st.dataframe(
                     matching_skills.rename(
                         "Frequency"
-                    ).to_frame()
+                    ).to_frame(),
+                    use_container_width=True
                 )
 
-            st.subheader("Complete Skills Frequency")
+            st.subheader("Complete Skill Frequency Table")
 
             st.dataframe(
                 skill_counts.rename(
                     "Frequency"
-                ).to_frame()
-            )
-
-        else:
-
-            st.info(
-                "The selected dataset does not contain "
-                "usable skill information."
+                ).to_frame(),
+                use_container_width=True
             )
 
 
-# Company analysis
 
 elif page == "Company Analysis":
 
@@ -816,9 +955,7 @@ elif page == "Company Analysis":
 
     if company_col is None:
 
-        st.warning(
-            "No company column was detected."
-        )
+        st.warning("No company column was detected.")
 
     else:
 
@@ -826,33 +963,39 @@ elif page == "Company Analysis":
             filtered_df[company_col]
             .dropna()
             .astype(str)
-            .value_counts()
+            .str.strip()
         )
+
+        company_counts = company_counts[
+            company_counts != ""
+        ].value_counts()
 
         col1, col2 = st.columns(2)
 
         col1.metric(
             "Unique Companies",
-            company_counts.size
+            len(company_counts)
         )
 
-        if len(company_counts) > 0:
-
-            col2.metric(
-                "Top Company Postings",
-                int(company_counts.iloc[0])
-            )
+        col2.metric(
+            "Most Job Postings",
+            int(company_counts.iloc[0])
+            if not company_counts.empty else 0
+        )
 
         st.subheader("Companies with the Most Job Postings")
 
-        st.bar_chart(
-            company_counts.head(20)
-        )
+        if not company_counts.empty:
+
+            st.bar_chart(
+                company_counts.head(20)
+            )
 
         st.subheader("Search Companies")
 
         company_search = st.text_input(
-            "Enter a company name"
+            "Enter a company name",
+            key="company_search"
         )
 
         companies = filtered_df.copy()
@@ -869,6 +1012,8 @@ elif page == "Company Analysis":
                     regex=False
                 )
             ]
+
+        st.write("Matching records:", len(companies))
 
         st.dataframe(
             companies,
@@ -892,7 +1037,7 @@ elif page == "Company Analysis":
                 st.bar_chart(company_salary)
 
 
-# Location analysis
+
 
 elif page == "Location Analysis":
 
@@ -900,9 +1045,7 @@ elif page == "Location Analysis":
 
     if location_col is None:
 
-        st.warning(
-            "No location column was detected."
-        )
+        st.warning("No location column was detected.")
 
     else:
 
@@ -910,28 +1053,33 @@ elif page == "Location Analysis":
             filtered_df[location_col]
             .dropna()
             .astype(str)
-            .value_counts()
+            .str.strip()
         )
+
+        location_counts = location_counts[
+            location_counts != ""
+        ].value_counts()
 
         col1, col2 = st.columns(2)
 
         col1.metric(
             "Unique Locations",
-            location_counts.size
+            len(location_counts)
         )
 
-        if len(location_counts) > 0:
-
-            col2.metric(
-                "Top Location Postings",
-                int(location_counts.iloc[0])
-            )
+        col2.metric(
+            "Most Job Postings",
+            int(location_counts.iloc[0])
+            if not location_counts.empty else 0
+        )
 
         st.subheader("Job Opportunities by Location")
 
-        st.bar_chart(
-            location_counts.head(20)
-        )
+        if not location_counts.empty:
+
+            st.bar_chart(
+                location_counts.head(20)
+            )
 
         if salary_col:
 
@@ -957,7 +1105,9 @@ elif page == "Location Analysis":
         )
 
 
-# Job trends
+# --------------------------------------------------
+# JOB TRENDS
+# --------------------------------------------------
 
 elif page == "Job Trends":
 
@@ -978,9 +1128,7 @@ elif page == "Job Trends":
 
         if trend_data.empty:
 
-            st.warning(
-                "No valid posting dates are available."
-            )
+            st.warning("No valid posting dates are available.")
 
         else:
 
@@ -991,8 +1139,8 @@ elif page == "Job Trends":
             )
 
             monthly_counts = (
-                trend_data["Month"]
-                .value_counts()
+                trend_data.groupby("Month")
+                .size()
                 .sort_index()
             )
 
@@ -1000,15 +1148,15 @@ elif page == "Job Trends":
 
             st.line_chart(monthly_counts)
 
-            st.subheader("Monthly Posting Summary")
-
             monthly_table = monthly_counts.rename(
                 "Job Postings"
             ).to_frame()
 
-            monthly_table["Change"] = (
+            monthly_table["Change from Previous Month"] = (
                 monthly_table["Job Postings"].diff()
             )
+
+            st.subheader("Monthly Posting Summary")
 
             st.dataframe(
                 monthly_table,
@@ -1017,17 +1165,20 @@ elif page == "Job Trends":
 
             if title_col:
 
-                st.subheader("Job Posting Trends by Job Title")
+                st.subheader("Job Trends by Job Title")
+
+                available_titles = sorted(
+                    trend_data[title_col]
+                    .dropna()
+                    .astype(str)
+                    .unique()
+                    .tolist()
+                )
 
                 selected_titles = st.multiselect(
-                    "Select job titles",
-                    sorted(
-                        trend_data[title_col]
-                        .dropna()
-                        .astype(str)
-                        .unique()
-                        .tolist()
-                    )[:100]
+                    "Select job titles to compare",
+                    options=available_titles,
+                    max_selections=10
                 )
 
                 if selected_titles:
@@ -1046,14 +1197,33 @@ elif page == "Job Trends":
                     st.line_chart(trend_pivot)
 
 
-# Download data
+# --------------------------------------------------
+# DOWNLOAD DATA
+# --------------------------------------------------
 
 elif page == "Download Data":
 
     st.header("📥 Download Job Market Data")
 
     st.write(
-        "Download the original dataset or the filtered dataset."
+        "Download the complete dataset or the filtered dataset."
+    )
+
+    col1, col2, col3 = st.columns(3)
+
+    col1.metric(
+        "Original Records",
+        len(df)
+    )
+
+    col2.metric(
+        "Filtered Records",
+        len(filtered_df)
+    )
+
+    col3.metric(
+        "Available Columns",
+        len(filtered_df.columns)
     )
 
     st.subheader("Filtered Dataset Preview")
@@ -1064,7 +1234,7 @@ elif page == "Download Data":
     )
 
     st.download_button(
-        label="Download Filtered Data as CSV",
+        label="Download Filtered Dataset",
         data=filtered_df.to_csv(
             index=False
         ).encode("utf-8"),
@@ -1073,7 +1243,7 @@ elif page == "Download Data":
     )
 
     st.download_button(
-        label="Download Complete Dataset as CSV",
+        label="Download Complete Dataset",
         data=df.to_csv(
             index=False
         ).encode("utf-8"),
@@ -1085,3 +1255,13 @@ elif page == "Download Data":
         f"{len(filtered_df)} records are currently selected."
     )
 
+
+# --------------------------------------------------
+# FOOTER
+# --------------------------------------------------
+
+st.sidebar.divider()
+
+st.sidebar.caption(
+    "Job Market Analytics | Streamlit Dashboard"
+)
