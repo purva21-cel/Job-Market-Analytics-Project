@@ -134,43 +134,6 @@ if page == "Dashboard":
     missing_df["Missing %"] = (df.isnull().mean() * 100).round(2)
     st.dataframe(missing_df, use_container_width=True)
 
-    st.subheader("Explore Charts")
-    numeric_columns = df.select_dtypes(include="number").columns.tolist()
-    all_columns = df.columns.tolist()
-
-    if numeric_columns:
-        chart_type = st.selectbox(
-            "Choose chart type",
-            ["Histogram", "Bar chart", "Line chart"],
-            key="numeric_chart_type"
-        )
-        selected_numeric = st.selectbox(
-            "Select a numeric column",
-            numeric_columns,
-            key="numeric_chart_column"
-        )
-        chart_data = df[selected_numeric].dropna()
-        if chart_type == "Histogram":
-            hist = pd.cut(chart_data, bins=min(20, max(1, chart_data.nunique()))).value_counts().sort_index()
-            st.bar_chart(hist)
-        elif chart_type == "Bar chart":
-            st.bar_chart(chart_data.reset_index(drop=True))
-        else:
-            st.line_chart(chart_data.reset_index(drop=True))
-    else:
-        st.info("No numeric columns were detected, so numeric charts are unavailable for this dataset.")
-
-    categorical_columns = df.select_dtypes(include=["object", "category", "bool"]).columns.tolist()
-    if categorical_columns:
-        st.subheader("Category Counts")
-        selected_category = st.selectbox(
-            "Select a category column",
-            categorical_columns,
-            key="category_chart_column"
-        )
-        counts = df[selected_category].fillna("(Missing)").astype(str).value_counts().head(20)
-        st.bar_chart(counts)
-
     if salary_ready:
         st.subheader("Salary Overview")
         salary_values = pd.to_numeric(df[TARGET], errors="coerce").dropna()
