@@ -641,7 +641,7 @@ elif page == "Model Performance":
             st.stop()
 
        X = data.drop(columns=[target])
-y = data[target]
+       y = data[target]
 
 # Remove identifier columns
 id_columns = [
