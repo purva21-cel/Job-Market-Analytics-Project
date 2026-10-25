@@ -463,7 +463,7 @@ def show_category_chart(data, column, title, limit=15):
         st.dataframe(chart_data, use_container_width=True)
 
 
--
+
 
 def get_skill_counts(data):
 
