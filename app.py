@@ -15,7 +15,58 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 st.set_page_config(page_title="Job Market Analytics", page_icon="📊", layout="wide")
 st.title("📊 Job Market Analytics and Salary Prediction")
 st.write("Explore online job listings and estimate salary in LPA using machine learning.")
+```python
+import streamlit as st
+import pandas as pd
 
+st.header("📂 Upload Your Own Dataset")
+
+uploaded_file = st.file_uploader(
+    "Choose a CSV dataset",
+    type=["csv"]
+)
+
+if uploaded_file is not None:
+    try:
+        uploaded_df = pd.read_csv(uploaded_file)
+
+        if uploaded_df.empty:
+            st.error("The uploaded dataset is empty.")
+        else:
+            st.success("Dataset uploaded successfully!")
+
+            st.subheader("Dataset Overview")
+            st.write("Number of rows:", uploaded_df.shape[0])
+            st.write("Number of columns:", uploaded_df.shape[1])
+
+            st.subheader("Dataset Preview")
+            st.dataframe(uploaded_df.head(20))
+
+            st.subheader("Dataset Statistics")
+            st.dataframe(uploaded_df.describe())
+
+            st.subheader("Missing Values")
+            st.dataframe(uploaded_df.isnull().sum())
+
+            numeric_columns = uploaded_df.select_dtypes(
+                include="number"
+            ).columns.tolist()
+
+            if numeric_columns:
+                st.subheader("Explore a Column")
+
+                selected_column = st.selectbox(
+                    "Select a numeric column",
+                    numeric_columns
+                )
+
+                st.line_chart(uploaded_df[selected_column])
+                st.bar_chart(uploaded_df[selected_column])
+
+    except Exception as e:
+        st.error("Unable to read this CSV file.")
+        st.write(str(e))
+```
 DATA_FILE = Path(__file__).parent / "online_job_listings_salary_dataset.csv"
 FEATURES = ["Job_Title", "Location", "Job_Type", "Experience_Level", "Experience_Years", "Education", "Skills", "Posting_Age_Days"]
 TARGET = "Salary_LPA"
