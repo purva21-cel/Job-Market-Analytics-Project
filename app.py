@@ -639,32 +639,25 @@ elif page == "Model Performance":
             )
 
             st.stop()
+                    X = data.drop(columns=[target])
+        y = data[target]
 
-       X = data.drop(columns=[target])
-       y = data[target]
+        # Remove identifier columns
+        id_columns = [
+            col for col in X.columns
+            if col.lower().replace("_", "").replace(" ", "")
+            in [
+                "id", "jobid", "companyid",
+                "employeeid", "recordid"
+            ]
+        ]
 
-# Remove identifier columns
-id_columns = [
-    col for col in X.columns
-    if col.lower().replace("_", "").replace(" ", "")
-    in [
-        "id", "jobid", "companyid",
-        "employeeid", "recordid"
-    ]
-]
+        X = X.drop(columns=id_columns, errors="ignore")
 
-X = X.drop(columns=id_columns, errors="ignore")
-
-# Remove columns with only one unique value
-X = X.loc[:, X.nunique(dropna=True) > 1]
-
-        # Remove columns that contain no useful information
-
-        X = X.dropna(axis=1, how="all")
+        # Remove columns with only one unique value
         X = X.loc[:, X.nunique(dropna=True) > 1]
 
-        # Exclude unsupported types
-
+        # Keep supported data types
         supported = X.select_dtypes(
             include=["number", "object", "category", "bool", "string"]
         ).columns
@@ -672,14 +665,17 @@ X = X.loc[:, X.nunique(dropna=True) > 1]
         X = X[supported]
 
         if X.empty:
-
             st.error("No usable input features were found.")
-
             st.stop()
 
         numeric_features = X.select_dtypes(
             include=np.number
         ).columns.tolist()
+
+        categorical_features = X.select_dtypes(
+            exclude=np.number
+        ).columns.tolist()
+            
 
         categorical_features = X.select_dtypes(
             exclude=np.number
