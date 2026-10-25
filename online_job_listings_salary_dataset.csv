@@ -1,0 +1,506 @@
+Job_ID,Job_Title,Company,Location,Job_Type,Experience_Level,Experience_Years,Education,Skills,Salary_LPA,Posting_Age_Days
+JOB0001,Python Developer,NextGen Software,Chennai,Full-time,5-8 Years,6.8,Bachelor's,"Python, Pandas, SQL",8.79,3
+JOB0002,Data Engineer,Insight Analytics,Bangalore,Full-time,5-8 Years,5.6,Bachelor's,"Python, AWS, Spark",12.15,44
+JOB0003,Data Analyst,CloudEdge Systems,Mumbai,Internship,1-3 Years,1.1,Bachelor's,"SQL, Excel, Tableau",2.77,57
+JOB0004,Machine Learning Engineer,NextGen Software,Ahmedabad,Internship,1-3 Years,1.1,PhD,"Python, PyTorch, AWS",3.23,26
+JOB0005,Business Analyst,InnovateLabs,Mumbai,Full-time,1-3 Years,1.2,Bachelor's,"SQL, Tableau, Excel",6.99,6
+JOB0006,Data Engineer,SmartData Technologies,Hyderabad,Full-time,Fresher,0.8,Bachelor's,"Python, AWS, Spark",7.57,15
+JOB0007,AI Engineer,InnovateLabs,Hyderabad,Full-time,Fresher,0.3,Bachelor's,"Python, Deep Learning, TensorFlow",10.0,45
+JOB0008,Data Analyst,DigitalWorks Pvt Ltd,Mumbai,Part-time,Fresher,1.0,,"Python, SQL, Statistics",4.22,17
+JOB0009,AI Engineer,TechNova Solutions,Delhi,Full-time,3-5 Years,4.9,Master's,"Python, Deep Learning, TensorFlow",13.65,23
+JOB0010,Data Engineer,CloudEdge Systems,Mumbai,Full-time,3-5 Years,3.5,Bachelor's,"SQL, ETL, Hadoop",10.57,1
+JOB0011,Business Analyst,NextGen Software,Hyderabad,Full-time,1-3 Years,1.1,Bachelor's,"Excel, SQL, Power BI",5.96,32
+JOB0012,Software Engineer,NextGen Software,Ahmedabad,Full-time,3-5 Years,4.1,PhD,"Python, Django, SQL",10.1,22
+JOB0013,Software Engineer,DigitalWorks Pvt Ltd,Ahmedabad,Full-time,1-3 Years,1.2,Bachelor's,"JavaScript, React, Node.js",6.0,25
+JOB0014,Python Developer,TechNova Solutions,Ahmedabad,Contract,1-3 Years,1.9,Master's,"Python, Pandas, SQL",6.74,27
+JOB0015,Data Analyst,TechNova Solutions,Pune,Internship,Fresher,0.3,Bachelor's,"Python, SQL, Excel, Power BI",2.19,12
+JOB0016,Data Engineer,CloudEdge Systems,Delhi,Full-time,1-3 Years,1.6,Bachelor's,"Python, AWS, Spark",8.69,23
+JOB0017,Business Analyst,TechNova Solutions,Mumbai,Full-time,1-3 Years,1.3,PhD,"Business Analysis, SQL, Power BI",7.6,38
+JOB0018,AI Engineer,DataSphere Analytics,Pune,Full-time,3-5 Years,4.1,Master's,"Python, Generative AI, Machine Learning",12.95,29
+JOB0019,Machine Learning Engineer,CloudEdge Systems,Hyderabad,Contract,1-3 Years,2.4,Bachelor's,"Python, Deep Learning, Docker",10.59,18
+JOB0020,AI Engineer,InnovateLabs,Bangalore,Full-time,5-8 Years,5.6,Master's,"Python, Generative AI, Machine Learning",17.09,26
+JOB0021,AI Engineer,InnovateLabs,Hyderabad,Internship,1-3 Years,3.0,Bachelor's,"Python, Generative AI, Machine Learning",5.88,16
+JOB0022,Machine Learning Engineer,SmartData Technologies,Ahmedabad,Full-time,5-8 Years,6.9,Bachelor's,"Python, PyTorch, AWS",10.84,35
+JOB0023,AI Engineer,CloudEdge Systems,Bangalore,Full-time,8+ Years,9.1,Bachelor's,"Python, Generative AI, Machine Learning",18.44,33
+JOB0024,Data Engineer,InnovateLabs,Mumbai,Part-time,1-3 Years,2.5,Bachelor's,"SQL, ETL, Hadoop",5.52,55
+JOB0025,Data Engineer,SmartData Technologies,Mumbai,Contract,8+ Years,9.9,Bachelor's,"Python, SQL, Hadoop, Spark",15.87,5
+JOB0026,Software Engineer,CloudEdge Systems,Delhi,Full-time,3-5 Years,4.5,PhD,"JavaScript, React, Node.js",14.47,53
+JOB0027,Data Engineer,TechNova Solutions,Pune,Full-time,8+ Years,9.3,Bachelor's,"Python, SQL, Hadoop, Spark",11.21,33
+JOB0028,AI Engineer,DataSphere Analytics,Pune,Full-time,3-5 Years,4.9,Bachelor's,"Python, NLP, PyTorch",12.24,22
+JOB0029,Python Developer,CloudEdge Systems,Bangalore,Contract,1-3 Years,1.6,Bachelor's,"Python, Flask, APIs",9.01,35
+JOB0030,Data Scientist,DigitalWorks Pvt Ltd,Ahmedabad,Full-time,Fresher,0.0,Bachelor's,"Python, Deep Learning, SQL",6.27,12
+JOB0031,Machine Learning Engineer,InnovateLabs,Mumbai,Full-time,3-5 Years,3.9,,"Python, PyTorch, AWS",13.07,22
+JOB0032,Data Analyst,SmartData Technologies,Bangalore,Full-time,1-3 Years,2.1,Master's,"Python, SQL, Excel, Power BI",6.29,6
+JOB0033,Business Analyst,SmartData Technologies,Bangalore,Part-time,3-5 Years,4.3,PhD,"SQL, Tableau, Excel",6.18,28
+JOB0034,Data Scientist,DigitalWorks Pvt Ltd,Bangalore,Full-time,1-3 Years,1.2,Master's,"Python, Machine Learning, SQL",11.1,1
+JOB0035,Python Developer,SmartData Technologies,Mumbai,Internship,Fresher,0.2,Master's,"Python, Django, SQL",4.93,55
+JOB0036,Machine Learning Engineer,Insight Analytics,Mumbai,Full-time,1-3 Years,1.2,Bachelor's,"Python, Deep Learning, Docker",11.24,46
+JOB0037,Data Engineer,InnovateLabs,Delhi,Contract,Fresher,0.8,Bachelor's,"Python, AWS, Spark",10.17,5
+JOB0038,Software Engineer,NextGen Software,Bangalore,Full-time,Fresher,0.9,Bachelor's,"Java, Python, SQL",7.19,24
+JOB0039,AI Engineer,TechNova Solutions,Delhi,Contract,5-8 Years,6.9,Master's,"Python, Generative AI, Machine Learning",18.43,37
+JOB0040,Software Engineer,TechNova Solutions,Pune,Full-time,3-5 Years,3.4,Bachelor's,"JavaScript, React, Node.js",6.89,51
+JOB0041,Data Scientist,TechNova Solutions,Delhi,Full-time,3-5 Years,3.8,Bachelor's,"R, Python, Statistics",10.77,45
+JOB0042,Machine Learning Engineer,InnovateLabs,Ahmedabad,Full-time,1-3 Years,2.9,Bachelor's,"Python, Deep Learning, Docker",9.05,48
+JOB0043,Software Engineer,NextGen Software,Pune,Full-time,3-5 Years,4.7,Bachelor's,"Python, Django, SQL",9.83,17
+JOB0044,Data Analyst,Insight Analytics,Hyderabad,Full-time,1-3 Years,1.6,Bachelor's,"Python, SQL, Excel, Power BI",6.32,12
+JOB0045,Data Analyst,SmartData Technologies,Mumbai,Full-time,3-5 Years,4.0,Bachelor's,"Python, SQL, Excel, Power BI",8.61,36
+JOB0046,Business Analyst,TechNova Solutions,Chennai,Internship,Fresher,0.9,PhD,"SQL, Tableau, Excel",2.2,23
+JOB0047,Business Analyst,DataSphere Analytics,Mumbai,Contract,8+ Years,10.8,Master's,"SQL, Tableau, Excel",12.99,50
+JOB0048,Machine Learning Engineer,DigitalWorks Pvt Ltd,Delhi,Full-time,3-5 Years,3.5,Master's,"Python, PyTorch, AWS",12.88,7
+JOB0049,Data Analyst,InnovateLabs,Hyderabad,Part-time,1-3 Years,1.2,Bachelor's,"Python, SQL, Statistics",3.02,45
+JOB0050,Business Analyst,SmartData Technologies,Pune,Full-time,Fresher,0.1,Master's,"Excel, SQL, Power BI",4.52,28
+JOB0051,Data Engineer,InnovateLabs,Pune,Full-time,1-3 Years,2.7,PhD,"Python, SQL, Hadoop, Spark",11.13,37
+JOB0052,Software Engineer,InnovateLabs,Hyderabad,Full-time,Fresher,0.2,Bachelor's,"Java, Python, SQL",7.17,54
+JOB0053,Machine Learning Engineer,TechNova Solutions,Ahmedabad,Full-time,8+ Years,11.8,Bachelor's,"Python, Machine Learning, TensorFlow",13.19,58
+JOB0054,Software Engineer,InnovateLabs,Hyderabad,Full-time,1-3 Years,1.5,Bachelor's,"Java, Python, SQL",6.82,20
+JOB0055,Business Analyst,DigitalWorks Pvt Ltd,Delhi,Internship,Fresher,0.1,Bachelor's,"Excel, SQL, Power BI",3.07,50
+JOB0056,Machine Learning Engineer,NextGen Software,Bangalore,Full-time,1-3 Years,2.6,PhD,"Python, Deep Learning, Docker",13.55,25
+JOB0057,Data Engineer,TechNova Solutions,Chennai,Full-time,5-8 Years,6.4,Bachelor's,"SQL, ETL, Hadoop",11.54,37
+JOB0058,Business Analyst,DataSphere Analytics,Nanded,Full-time,1-3 Years,1.5,Bachelor's,"Excel, SQL, Power BI",4.5,1
+JOB0059,Data Analyst,DataSphere Analytics,Delhi,Full-time,1-3 Years,1.2,Bachelor's,"SQL, Excel, Tableau",6.62,44
+JOB0060,Business Analyst,CloudEdge Systems,Bangalore,Full-time,1-3 Years,1.3,Master's,"Excel, SQL, Power BI",7.25,11
+JOB0061,Machine Learning Engineer,Insight Analytics,Ahmedabad,Full-time,Fresher,0.4,Bachelor's,"Python, Deep Learning, Docker",8.11,33
+JOB0062,AI Engineer,SmartData Technologies,Ahmedabad,Internship,3-5 Years,4.7,Bachelor's,"Python, Deep Learning, TensorFlow",6.16,60
+JOB0063,Software Engineer,DataSphere Analytics,Pune,Full-time,3-5 Years,3.7,Bachelor's,"Python, Django, SQL",7.78,56
+JOB0064,Data Analyst,CloudEdge Systems,Ahmedabad,Full-time,3-5 Years,4.9,Bachelor's,"Python, SQL, Excel, Power BI",6.65,28
+JOB0065,Data Scientist,DigitalWorks Pvt Ltd,Bangalore,Full-time,3-5 Years,4.1,Master's,"Python, Machine Learning, SQL",12.58,57
+JOB0066,Python Developer,NextGen Software,Hyderabad,Full-time,3-5 Years,3.3,Bachelor's,"Python, Django, SQL",7.67,35
+JOB0067,Business Analyst,NextGen Software,Nanded,Full-time,1-3 Years,2.0,Bachelor's,"SQL, Tableau, Excel",5.22,46
+JOB0068,Machine Learning Engineer,DigitalWorks Pvt Ltd,Hyderabad,Full-time,5-8 Years,6.1,Bachelor's,"Python, Deep Learning, Docker",13.14,10
+JOB0069,Python Developer,NextGen Software,Mumbai,Full-time,Fresher,0.5,Bachelor's,"Python, Django, SQL",6.69,47
+JOB0070,Software Engineer,DataSphere Analytics,Hyderabad,Full-time,3-5 Years,4.2,Bachelor's,"Java, Python, SQL",10.74,26
+JOB0071,AI Engineer,Insight Analytics,Hyderabad,Internship,3-5 Years,3.7,Bachelor's,"Python, Deep Learning, TensorFlow",4.75,11
+JOB0072,Data Engineer,NextGen Software,Mumbai,Full-time,Fresher,0.8,Bachelor's,"Python, SQL, Hadoop, Spark",8.35,31
+JOB0073,Data Engineer,InnovateLabs,Pune,Internship,8+ Years,8.0,Bachelor's,"Python, AWS, Spark",5.85,8
+JOB0074,Data Scientist,InnovateLabs,Mumbai,Full-time,1-3 Years,2.9,Bachelor's,"Python, Machine Learning, SQL",11.26,1
+JOB0075,Data Scientist,SmartData Technologies,Chennai,Full-time,3-5 Years,3.3,Bachelor's,"Python, Machine Learning, SQL",11.0,10
+JOB0076,Software Engineer,Insight Analytics,Bangalore,Full-time,5-8 Years,5.8,Master's,"Python, Django, SQL",11.06,38
+JOB0077,Python Developer,NextGen Software,Chennai,Internship,8+ Years,11.3,Bachelor's,"Python, Pandas, SQL",6.59,29
+JOB0078,AI Engineer,DigitalWorks Pvt Ltd,Chennai,Full-time,1-3 Years,1.3,Master's,"Python, Generative AI, Machine Learning",11.8,4
+JOB0079,Data Analyst,TechNova Solutions,Ahmedabad,Full-time,3-5 Years,3.9,Master's,"Python, SQL, Excel, Power BI",6.66,25
+JOB0080,Data Analyst,NextGen Software,Ahmedabad,Full-time,3-5 Years,3.1,Bachelor's,"SQL, Excel, Tableau",7.43,7
+JOB0081,Machine Learning Engineer,Insight Analytics,Mumbai,Full-time,1-3 Years,2.8,Master's,"Python, Deep Learning, Docker",12.32,37
+JOB0082,Machine Learning Engineer,SmartData Technologies,Delhi,Full-time,1-3 Years,2.4,Master's,"Python, PyTorch, AWS",11.21,31
+JOB0083,Python Developer,Insight Analytics,Chennai,Full-time,3-5 Years,4.0,Bachelor's,,9.27,36
+JOB0084,Data Scientist,DigitalWorks Pvt Ltd,Mumbai,Full-time,5-8 Years,7.9,Bachelor's,"R, Python, Statistics",14.78,46
+JOB0085,Machine Learning Engineer,DigitalWorks Pvt Ltd,Bangalore,Full-time,Fresher,0.1,Master's,"Python, Deep Learning, Docker",12.41,56
+JOB0086,Business Analyst,DataSphere Analytics,Delhi,Full-time,5-8 Years,6.1,Bachelor's,"SQL, Tableau, Excel",10.87,22
+JOB0087,Machine Learning Engineer,SmartData Technologies,Pune,Full-time,1-3 Years,1.3,Master's,"Python, Machine Learning, TensorFlow",12.63,21
+JOB0088,Python Developer,TechNova Solutions,Bangalore,Full-time,1-3 Years,2.6,Bachelor's,"Python, Django, SQL",9.23,38
+JOB0089,Data Scientist,CloudEdge Systems,Pune,Full-time,5-8 Years,6.4,Bachelor's,"R, Python, Statistics",10.44,53
+JOB0090,AI Engineer,DigitalWorks Pvt Ltd,Mumbai,Full-time,3-5 Years,4.3,Master's,"Python, Generative AI, Machine Learning",14.94,41
+JOB0091,Data Analyst,SmartData Technologies,Hyderabad,Full-time,Fresher,1.0,Bachelor's,"Python, SQL, Excel, Power BI",6.55,32
+JOB0092,Data Engineer,DigitalWorks Pvt Ltd,Bangalore,Full-time,1-3 Years,2.7,Bachelor's,"SQL, ETL, Hadoop",10.03,2
+JOB0093,Data Engineer,DataSphere Analytics,Pune,Full-time,3-5 Years,4.5,Bachelor's,"SQL, ETL, Hadoop",9.69,46
+JOB0094,Data Scientist,NextGen Software,Pune,Contract,8+ Years,11.4,Bachelor's,"Python, Machine Learning, SQL",14.56,24
+JOB0095,Python Developer,DigitalWorks Pvt Ltd,Delhi,Full-time,3-5 Years,3.7,Master's,"Python, Pandas, SQL",10.46,16
+JOB0096,Software Engineer,SmartData Technologies,Nanded,Contract,1-3 Years,1.6,Bachelor's,"Python, Django, SQL",6.47,21
+JOB0097,Machine Learning Engineer,CloudEdge Systems,Bangalore,Contract,3-5 Years,3.8,Master's,"Python, Deep Learning, Docker",15.42,12
+JOB0098,Software Engineer,SmartData Technologies,Hyderabad,Contract,5-8 Years,6.1,Bachelor's,"JavaScript, React, Node.js",11.01,24
+JOB0099,Data Analyst,Insight Analytics,Ahmedabad,Full-time,8+ Years,9.9,Bachelor's,"Python, SQL, Excel, Power BI",10.5,39
+JOB0100,Data Analyst,CloudEdge Systems,Bangalore,Contract,1-3 Years,1.3,Master's,"Python, SQL, Excel, Power BI",7.89,18
+JOB0101,AI Engineer,InnovateLabs,Bangalore,Full-time,3-5 Years,3.1,Bachelor's,"Python, Generative AI, Machine Learning",12.25,31
+JOB0102,Data Engineer,DataSphere Analytics,Delhi,Full-time,3-5 Years,4.3,Master's,"Python, AWS, Spark",10.59,58
+JOB0103,Data Engineer,InnovateLabs,Bangalore,Full-time,8+ Years,8.7,Master's,"Python, SQL, Hadoop, Spark",14.28,49
+JOB0104,Machine Learning Engineer,CloudEdge Systems,Mumbai,Internship,8+ Years,9.6,Bachelor's,"Python, Machine Learning, TensorFlow",5.96,47
+JOB0105,Software Engineer,InnovateLabs,Bangalore,Full-time,Fresher,0.5,Bachelor's,"JavaScript, React, Node.js",7.14,1
+JOB0106,Data Analyst,Insight Analytics,Delhi,Contract,1-3 Years,1.5,Master's,"Python, SQL, Statistics",5.99,34
+JOB0107,Software Engineer,InnovateLabs,Pune,Contract,5-8 Years,7.9,Master's,"Java, Python, SQL",13.51,8
+JOB0108,Python Developer,NextGen Software,Chennai,Internship,5-8 Years,6.9,Master's,"Python, Pandas, SQL",4.93,41
+JOB0109,Business Analyst,Insight Analytics,Delhi,Full-time,5-8 Years,7.8,Bachelor's,"SQL, Tableau, Excel",10.45,51
+JOB0110,AI Engineer,CloudEdge Systems,Bangalore,Contract,8+ Years,9.9,Master's,"Python, NLP, PyTorch",19.73,39
+JOB0111,Data Analyst,Insight Analytics,Delhi,Full-time,1-3 Years,1.2,Master's,"SQL, Excel, Tableau",6.38,49
+JOB0112,Software Engineer,TechNova Solutions,Chennai,Full-time,5-8 Years,6.6,Master's,"JavaScript, React, Node.js",9.87,42
+JOB0113,Data Scientist,NextGen Software,Bangalore,Internship,1-3 Years,1.8,Bachelor's,"Python, Deep Learning, SQL",4.18,53
+JOB0114,Software Engineer,Insight Analytics,Hyderabad,Full-time,1-3 Years,1.8,Bachelor's,"Java, Python, SQL",9.45,49
+JOB0115,Machine Learning Engineer,Insight Analytics,Pune,Full-time,1-3 Years,1.6,Bachelor's,"Python, Machine Learning, TensorFlow",9.38,59
+JOB0116,Data Scientist,,Chennai,Contract,Fresher,0.4,PhD,"R, Python, Statistics",9.81,34
+JOB0117,Data Analyst,InnovateLabs,Delhi,Full-time,1-3 Years,2.9,Bachelor's,"Python, SQL, Excel, Power BI",6.4,41
+JOB0118,Data Analyst,Insight Analytics,Nanded,Internship,1-3 Years,1.1,Master's,"Python, SQL, Statistics",1.67,49
+JOB0119,Business Analyst,CloudEdge Systems,Mumbai,Full-time,5-8 Years,7.1,Master's,"SQL, Tableau, Excel",9.85,59
+JOB0120,Software Engineer,CloudEdge Systems,Pune,Contract,8+ Years,11.4,Master's,"Java, Python, SQL",16.09,34
+JOB0121,AI Engineer,SmartData Technologies,Mumbai,Full-time,1-3 Years,2.4,Bachelor's,"Python, Deep Learning, TensorFlow",12.37,51
+JOB0122,Data Scientist,Insight Analytics,Hyderabad,Full-time,3-5 Years,4.1,Master's,"R, Python, Statistics",12.77,28
+JOB0123,Data Analyst,Insight Analytics,Bangalore,Full-time,5-8 Years,7.5,Master's,"Python, SQL, Statistics",12.19,45
+JOB0124,Data Scientist,NextGen Software,Pune,Full-time,5-8 Years,5.4,Master's,"R, Python, Statistics",11.0,2
+JOB0125,Data Engineer,InnovateLabs,Delhi,Full-time,Fresher,0.3,PhD,"Python, SQL, Hadoop, Spark",9.18,19
+JOB0126,Data Engineer,TechNova Solutions,Bangalore,Full-time,8+ Years,9.4,PhD,"Python, SQL, Hadoop, Spark",17.8,20
+JOB0127,AI Engineer,InnovateLabs,Chennai,Full-time,1-3 Years,2.4,Bachelor's,"Python, Deep Learning, TensorFlow",11.74,52
+JOB0128,Business Analyst,DigitalWorks Pvt Ltd,Pune,Full-time,Fresher,0.3,Master's,"SQL, Tableau, Excel",5.5,34
+JOB0129,Data Engineer,InnovateLabs,Pune,Full-time,1-3 Years,1.9,Master's,"Python, SQL, Hadoop, Spark",9.5,20
+JOB0130,Data Engineer,CloudEdge Systems,Bangalore,Full-time,8+ Years,8.6,PhD,"Python, SQL, Hadoop, Spark",16.98,6
+JOB0131,Machine Learning Engineer,CloudEdge Systems,Mumbai,Part-time,1-3 Years,1.6,Master's,"Python, Deep Learning, Docker",6.36,15
+JOB0132,Software Engineer,Insight Analytics,Pune,Full-time,1-3 Years,1.4,Bachelor's,"Python, Django, SQL",9.01,52
+JOB0133,Python Developer,Insight Analytics,Hyderabad,Internship,1-3 Years,2.8,Bachelor's,"Python, Pandas, SQL",2.94,38
+JOB0134,AI Engineer,NextGen Software,Pune,Full-time,3-5 Years,3.7,Bachelor's,"Python, Deep Learning, TensorFlow",12.81,21
+JOB0135,Data Scientist,DataSphere Analytics,Delhi,Full-time,3-5 Years,4.2,Master's,"Python, Machine Learning, SQL",12.56,51
+JOB0136,AI Engineer,InnovateLabs,Bangalore,Full-time,8+ Years,8.6,Bachelor's,"Python, Deep Learning, TensorFlow",17.55,32
+JOB0137,Data Scientist,DataSphere Analytics,Mumbai,Full-time,3-5 Years,4.8,Master's,"Python, Deep Learning, SQL",12.62,46
+JOB0138,Data Scientist,DataSphere Analytics,Chennai,Internship,Fresher,0.7,Bachelor's,"R, Python, Statistics",2.67,6
+JOB0139,Data Analyst,Insight Analytics,Bangalore,Internship,1-3 Years,2.9,Master's,"SQL, Excel, Tableau",5.43,16
+JOB0140,Software Engineer,SmartData Technologies,Hyderabad,Full-time,3-5 Years,4.3,Master's,"Python, Django, SQL",10.66,12
+JOB0141,Python Developer,TechNova Solutions,Delhi,Internship,5-8 Years,5.7,Bachelor's,"Python, Django, SQL",4.64,18
+JOB0142,Data Engineer,SmartData Technologies,Delhi,Full-time,1-3 Years,2.1,Bachelor's,"SQL, ETL, Hadoop",10.92,29
+JOB0143,Data Engineer,TechNova Solutions,Bangalore,Internship,5-8 Years,5.5,Bachelor's,,4.18,53
+JOB0144,Data Scientist,DataSphere Analytics,Pune,Full-time,3-5 Years,4.6,PhD,"Python, Deep Learning, SQL",14.47,12
+JOB0145,Machine Learning Engineer,Insight Analytics,Hyderabad,Part-time,5-8 Years,5.7,Bachelor's,"Python, PyTorch, AWS",8.24,45
+JOB0146,Data Analyst,InnovateLabs,Mumbai,Full-time,1-3 Years,2.2,Master's,"Python, SQL, Statistics",6.9,59
+JOB0147,Data Analyst,DataSphere Analytics,Nanded,Full-time,5-8 Years,5.0,Bachelor's,"Python, SQL, Excel, Power BI",5.68,54
+JOB0148,Data Engineer,DigitalWorks Pvt Ltd,Mumbai,Full-time,1-3 Years,2.7,,"SQL, ETL, Hadoop",10.09,57
+JOB0149,AI Engineer,InnovateLabs,Mumbai,Full-time,Fresher,0.7,Bachelor's,"Python, Deep Learning, TensorFlow",11.76,6
+JOB0150,Software Engineer,InnovateLabs,Hyderabad,Full-time,1-3 Years,1.1,PhD,"Java, Python, SQL",9.15,35
+JOB0151,Data Engineer,CloudEdge Systems,Bangalore,Full-time,1-3 Years,2.0,Bachelor's,"Python, SQL, Hadoop, Spark",8.59,43
+JOB0152,Data Scientist,SmartData Technologies,Mumbai,Full-time,Fresher,0.0,Master's,"Python, Deep Learning, SQL",9.73,8
+JOB0153,Data Scientist,NextGen Software,Bangalore,Contract,3-5 Years,3.9,Bachelor's,"Python, Deep Learning, SQL",12.96,30
+JOB0154,Data Scientist,DataSphere Analytics,Mumbai,Full-time,5-8 Years,6.7,PhD,"Python, Deep Learning, SQL",15.87,1
+JOB0155,Machine Learning Engineer,SmartData Technologies,Nanded,Full-time,1-3 Years,2.3,Master's,"Python, PyTorch, AWS",8.81,25
+JOB0156,AI Engineer,DigitalWorks Pvt Ltd,Delhi,Contract,3-5 Years,4.5,Bachelor's,"Python, NLP, PyTorch",14.26,19
+JOB0157,Data Engineer,DigitalWorks Pvt Ltd,Ahmedabad,Contract,5-8 Years,6.3,Bachelor's,"Python, AWS, Spark",11.64,58
+JOB0158,Python Developer,CloudEdge Systems,Hyderabad,Full-time,1-3 Years,1.9,Bachelor's,"Python, Flask, APIs",5.74,35
+JOB0159,AI Engineer,DataSphere Analytics,Delhi,Full-time,5-8 Years,6.5,PhD,"Python, NLP, PyTorch",14.53,37
+JOB0160,Python Developer,NextGen Software,Hyderabad,Part-time,1-3 Years,2.1,Master's,"Python, Pandas, SQL",3.67,23
+JOB0161,Machine Learning Engineer,NextGen Software,Bangalore,Full-time,Fresher,1.0,Bachelor's,"Python, Machine Learning, TensorFlow",10.54,4
+JOB0162,AI Engineer,SmartData Technologies,Hyderabad,Full-time,1-3 Years,2.6,Bachelor's,"Python, NLP, PyTorch",11.25,49
+JOB0163,Business Analyst,TechNova Solutions,Pune,Contract,3-5 Years,3.2,Master's,"Business Analysis, SQL, Power BI",8.96,42
+JOB0164,AI Engineer,InnovateLabs,Nanded,Full-time,Fresher,0.8,Bachelor's,"Python, Generative AI, Machine Learning",6.44,55
+JOB0165,Data Engineer,SmartData Technologies,Chennai,Full-time,3-5 Years,4.6,Bachelor's,"Python, SQL, Hadoop, Spark",10.01,26
+JOB0166,Machine Learning Engineer,DataSphere Analytics,Chennai,Full-time,5-8 Years,7.6,Master's,"Python, Deep Learning, Docker",14.64,33
+JOB0167,Python Developer,NextGen Software,Hyderabad,Full-time,1-3 Years,2.7,Bachelor's,"Python, Flask, APIs",8.25,32
+JOB0168,Machine Learning Engineer,SmartData Technologies,Mumbai,Full-time,3-5 Years,3.1,Bachelor's,"Python, Deep Learning, Docker",13.42,3
+JOB0169,Data Scientist,NextGen Software,Pune,Full-time,5-8 Years,5.0,Master's,"Python, Deep Learning, SQL",11.6,36
+JOB0170,AI Engineer,InnovateLabs,Delhi,Full-time,1-3 Years,1.6,Bachelor's,"Python, Deep Learning, TensorFlow",11.17,2
+JOB0171,Software Engineer,CloudEdge Systems,Chennai,Full-time,3-5 Years,3.5,Master's,"Java, Python, SQL",8.06,35
+JOB0172,Data Scientist,InnovateLabs,Pune,Internship,Fresher,0.6,Bachelor's,"R, Python, Statistics",2.67,55
+JOB0173,AI Engineer,SmartData Technologies,Pune,Full-time,3-5 Years,4.5,Master's,"Python, Generative AI, Machine Learning",13.16,40
+JOB0174,Data Engineer,Insight Analytics,Nanded,Full-time,5-8 Years,5.7,Bachelor's,"Python, AWS, Spark",6.16,39
+JOB0175,AI Engineer,Insight Analytics,Bangalore,Full-time,3-5 Years,3.3,Bachelor's,"Python, Generative AI, Machine Learning",12.33,27
+JOB0176,Data Analyst,CloudEdge Systems,Hyderabad,Internship,5-8 Years,5.8,Master's,"SQL, Excel, Tableau",4.36,43
+JOB0177,Python Developer,DigitalWorks Pvt Ltd,Nanded,Full-time,1-3 Years,2.0,Bachelor's,"Python, Django, SQL",5.43,52
+JOB0178,Data Engineer,DigitalWorks Pvt Ltd,Bangalore,Full-time,Fresher,0.2,PhD,"Python, AWS, Spark",10.53,25
+JOB0179,Data Scientist,SmartData Technologies,Bangalore,Full-time,1-3 Years,2.2,Master's,"Python, Deep Learning, SQL",9.01,25
+JOB0180,Business Analyst,Insight Analytics,Pune,Full-time,3-5 Years,4.0,Bachelor's,"Excel, SQL, Power BI",8.37,20
+JOB0181,Data Scientist,NextGen Software,Mumbai,Full-time,3-5 Years,3.4,Master's,"R, Python, Statistics",10.47,25
+JOB0182,Data Scientist,DataSphere Analytics,Pune,Internship,Fresher,0.7,Bachelor's,"R, Python, Statistics",3.92,28
+JOB0183,Data Engineer,NextGen Software,Mumbai,Full-time,3-5 Years,3.1,PhD,"Python, SQL, Hadoop, Spark",10.93,36
+JOB0184,Software Engineer,DataSphere Analytics,Chennai,Full-time,Fresher,0.9,Bachelor's,"Python, Django, SQL",6.64,22
+JOB0185,Data Engineer,DigitalWorks Pvt Ltd,Bangalore,Full-time,5-8 Years,5.0,Bachelor's,"Python, AWS, Spark",13.92,56
+JOB0186,Python Developer,DigitalWorks Pvt Ltd,Hyderabad,Internship,Fresher,0.2,Master's,"Python, Django, SQL",3.67,17
+JOB0187,Machine Learning Engineer,CloudEdge Systems,Mumbai,Full-time,3-5 Years,4.7,Bachelor's,"Python, PyTorch, AWS",12.6,41
+JOB0188,Business Analyst,SmartData Technologies,Pune,Full-time,1-3 Years,2.9,Bachelor's,"Excel, SQL, Power BI",8.85,2
+JOB0189,Software Engineer,TechNova Solutions,Bangalore,Contract,5-8 Years,5.1,Bachelor's,"Python, Django, SQL",11.62,49
+JOB0190,Python Developer,NextGen Software,Ahmedabad,Part-time,3-5 Years,3.3,Bachelor's,,2.38,8
+JOB0191,Data Analyst,TechNova Solutions,Delhi,Full-time,Fresher,0.1,PhD,"Python, SQL, Excel, Power BI",6.7,52
+JOB0192,Python Developer,CloudEdge Systems,Nanded,Full-time,1-3 Years,1.3,Master's,"Python, Flask, APIs",5.26,32
+JOB0193,AI Engineer,NextGen Software,Nanded,Internship,5-8 Years,5.7,Master's,"Python, Generative AI, Machine Learning",5.35,41
+JOB0194,Data Analyst,SmartData Technologies,Hyderabad,Full-time,5-8 Years,6.0,Bachelor's,"SQL, Excel, Tableau",9.39,53
+JOB0195,AI Engineer,Insight Analytics,Delhi,Full-time,3-5 Years,3.3,Bachelor's,"Python, NLP, PyTorch",10.94,60
+JOB0196,Data Scientist,SmartData Technologies,Hyderabad,Full-time,1-3 Years,2.9,Bachelor's,"Python, Machine Learning, SQL",8.54,35
+JOB0197,Data Scientist,NextGen Software,Chennai,Full-time,5-8 Years,5.8,Master's,"Python, Deep Learning, SQL",12.0,7
+JOB0198,Python Developer,CloudEdge Systems,Delhi,Full-time,1-3 Years,2.5,Bachelor's,"Python, Django, SQL",8.01,29
+JOB0199,Business Analyst,CloudEdge Systems,Delhi,Full-time,8+ Years,10.0,Bachelor's,"SQL, Tableau, Excel",12.43,54
+JOB0200,Machine Learning Engineer,SmartData Technologies,Bangalore,Part-time,5-8 Years,6.9,Bachelor's,"Python, PyTorch, AWS",12.03,8
+JOB0201,Data Analyst,CloudEdge Systems,Delhi,Full-time,8+ Years,8.4,Master's,"Python, SQL, Statistics",11.28,27
+JOB0202,Machine Learning Engineer,Insight Analytics,Delhi,Full-time,5-8 Years,6.7,Master's,"Python, PyTorch, AWS",15.67,14
+JOB0203,Data Engineer,DigitalWorks Pvt Ltd,Delhi,Full-time,1-3 Years,1.7,Bachelor's,"SQL, ETL, Hadoop",8.45,20
+JOB0204,Data Scientist,CloudEdge Systems,Ahmedabad,Full-time,Fresher,0.7,Bachelor's,"Python, Deep Learning, SQL",5.48,4
+JOB0205,Software Engineer,InnovateLabs,Chennai,Full-time,1-3 Years,2.7,Master's,"Java, Python, SQL",10.37,24
+JOB0206,Data Scientist,CloudEdge Systems,Hyderabad,Full-time,1-3 Years,2.7,Bachelor's,"Python, Deep Learning, SQL",11.53,12
+JOB0207,Data Engineer,DigitalWorks Pvt Ltd,Nanded,Full-time,5-8 Years,6.6,Bachelor's,"SQL, ETL, Hadoop",8.06,49
+JOB0208,Machine Learning Engineer,NextGen Software,Chennai,Full-time,8+ Years,11.7,Bachelor's,"Python, Deep Learning, Docker",13.13,6
+JOB0209,Python Developer,CloudEdge Systems,Chennai,Full-time,5-8 Years,7.9,Bachelor's,"Python, Flask, APIs",9.43,17
+JOB0210,Machine Learning Engineer,DigitalWorks Pvt Ltd,Mumbai,Full-time,Fresher,0.9,Bachelor's,"Python, Machine Learning, TensorFlow",11.01,21
+JOB0211,Data Scientist,InnovateLabs,Nanded,Part-time,Fresher,0.1,Bachelor's,"Python, Machine Learning, SQL",3.32,57
+JOB0212,Python Developer,TechNova Solutions,Ahmedabad,Full-time,8+ Years,8.3,Bachelor's,"Python, Pandas, SQL",8.59,28
+JOB0213,Data Engineer,Insight Analytics,Mumbai,Contract,1-3 Years,1.9,Bachelor's,"Python, SQL, Hadoop, Spark",8.16,7
+JOB0214,Data Engineer,DataSphere Analytics,Ahmedabad,Full-time,5-8 Years,6.6,Master's,"Python, SQL, Hadoop, Spark",10.47,44
+JOB0215,AI Engineer,TechNova Solutions,Mumbai,Full-time,3-5 Years,5.0,Master's,"Python, Deep Learning, TensorFlow",14.99,12
+JOB0216,Data Analyst,TechNova Solutions,Bangalore,Full-time,1-3 Years,1.5,Master's,"Python, SQL, Statistics",7.18,24
+JOB0217,Business Analyst,InnovateLabs,Mumbai,Full-time,5-8 Years,5.2,Bachelor's,"SQL, Tableau, Excel",8.66,5
+JOB0218,Data Scientist,TechNova Solutions,Delhi,Full-time,3-5 Years,3.9,Master's,"Python, Deep Learning, SQL",12.17,47
+JOB0219,AI Engineer,CloudEdge Systems,Bangalore,Contract,3-5 Years,3.1,Bachelor's,"Python, Generative AI, Machine Learning",15.79,52
+JOB0220,Data Engineer,Insight Analytics,Bangalore,Contract,5-8 Years,7.6,Bachelor's,"Python, SQL, Hadoop, Spark",15.38,28
+JOB0221,Data Scientist,DataSphere Analytics,Hyderabad,Contract,Fresher,0.5,Bachelor's,"R, Python, Statistics",9.86,50
+JOB0222,Machine Learning Engineer,CloudEdge Systems,Chennai,Full-time,1-3 Years,1.4,,"Python, Machine Learning, TensorFlow",9.78,21
+JOB0223,AI Engineer,NextGen Software,Chennai,Full-time,1-3 Years,2.8,Bachelor's,"Python, NLP, PyTorch",11.59,3
+JOB0224,Machine Learning Engineer,Insight Analytics,Mumbai,Full-time,3-5 Years,4.2,Bachelor's,"Python, Deep Learning, Docker",12.06,30
+JOB0225,Data Engineer,CloudEdge Systems,Nanded,Full-time,5-8 Years,7.4,PhD,"SQL, ETL, Hadoop",10.35,34
+JOB0226,Software Engineer,DataSphere Analytics,Nanded,Full-time,1-3 Years,1.3,Bachelor's,"Java, Python, SQL",4.83,20
+JOB0227,Data Scientist,SmartData Technologies,Bangalore,Contract,5-8 Years,5.6,,"Python, Deep Learning, SQL",14.2,9
+JOB0228,Business Analyst,SmartData Technologies,Mumbai,Full-time,5-8 Years,6.0,Master's,"SQL, Tableau, Excel",10.35,21
+JOB0229,Machine Learning Engineer,TechNova Solutions,Bangalore,Full-time,5-8 Years,5.6,Bachelor's,"Python, PyTorch, AWS",15.06,27
+JOB0230,Machine Learning Engineer,DigitalWorks Pvt Ltd,Bangalore,Full-time,3-5 Years,3.7,Bachelor's,"Python, Deep Learning, Docker",12.73,20
+JOB0231,Software Engineer,NextGen Software,Nanded,Full-time,1-3 Years,2.3,Bachelor's,"JavaScript, React, Node.js",7.0,36
+JOB0232,Software Engineer,TechNova Solutions,Mumbai,Full-time,5-8 Years,7.0,Master's,"Python, Django, SQL",11.39,59
+JOB0233,Machine Learning Engineer,SmartData Technologies,Pune,Full-time,3-5 Years,4.7,Bachelor's,"Python, PyTorch, AWS",12.03,40
+JOB0234,AI Engineer,SmartData Technologies,Bangalore,Full-time,1-3 Years,2.7,Master's,"Python, NLP, PyTorch",13.62,28
+JOB0235,Software Engineer,SmartData Technologies,Nanded,Contract,5-8 Years,5.9,Bachelor's,"Python, Django, SQL",7.76,36
+JOB0236,AI Engineer,TechNova Solutions,Mumbai,Full-time,Fresher,0.5,Bachelor's,"Python, Generative AI, Machine Learning",10.42,14
+JOB0237,Data Engineer,CloudEdge Systems,Hyderabad,Full-time,8+ Years,11.4,Bachelor's,"Python, SQL, Hadoop, Spark",17.2,49
+JOB0238,AI Engineer,CloudEdge Systems,Bangalore,Full-time,1-3 Years,2.6,Master's,"Python, Deep Learning, TensorFlow",15.27,33
+JOB0239,Business Analyst,DigitalWorks Pvt Ltd,Bangalore,Full-time,Fresher,0.9,PhD,"Excel, SQL, Power BI",7.31,19
+JOB0240,Data Scientist,SmartData Technologies,Bangalore,Full-time,3-5 Years,4.3,Master's,"R, Python, Statistics",12.73,28
+JOB0241,Software Engineer,DigitalWorks Pvt Ltd,Pune,Full-time,8+ Years,9.1,Bachelor's,"Java, Python, SQL",12.08,25
+JOB0242,Data Scientist,InnovateLabs,Pune,Full-time,3-5 Years,4.8,Bachelor's,"Python, Machine Learning, SQL",10.8,49
+JOB0243,Machine Learning Engineer,CloudEdge Systems,Bangalore,Full-time,1-3 Years,1.9,Bachelor's,"Python, Machine Learning, TensorFlow",10.98,21
+JOB0244,Business Analyst,SmartData Technologies,Hyderabad,Full-time,1-3 Years,1.1,Master's,"Excel, SQL, Power BI",6.25,24
+JOB0245,Business Analyst,NextGen Software,Mumbai,Full-time,3-5 Years,3.1,Bachelor's,"Business Analysis, SQL, Power BI",6.93,44
+JOB0246,Machine Learning Engineer,,Pune,Full-time,3-5 Years,3.5,Bachelor's,"Python, PyTorch, AWS",10.42,58
+JOB0247,Business Analyst,CloudEdge Systems,Bangalore,Contract,Fresher,0.7,Bachelor's,"SQL, Tableau, Excel",7.82,36
+JOB0248,Data Scientist,NextGen Software,Bangalore,Full-time,1-3 Years,2.5,Bachelor's,"R, Python, Statistics",11.5,2
+JOB0249,Python Developer,DataSphere Analytics,Delhi,Full-time,1-3 Years,2.2,Master's,"Python, Flask, APIs",7.68,6
+JOB0250,Machine Learning Engineer,DigitalWorks Pvt Ltd,Delhi,Full-time,Fresher,0.5,Bachelor's,"Python, PyTorch, AWS",9.43,43
+JOB0251,Data Analyst,NextGen Software,Bangalore,Full-time,Fresher,0.1,Bachelor's,"Python, SQL, Statistics",5.35,43
+JOB0252,Data Scientist,DigitalWorks Pvt Ltd,Pune,Contract,1-3 Years,1.6,Bachelor's,"Python, Deep Learning, SQL",9.01,3
+JOB0253,Software Engineer,TechNova Solutions,Hyderabad,Full-time,1-3 Years,1.6,Bachelor's,"Java, Python, SQL",8.27,34
+JOB0254,AI Engineer,NextGen Software,Bangalore,Full-time,Fresher,0.9,Bachelor's,"Python, Deep Learning, TensorFlow",9.54,18
+JOB0255,Software Engineer,NextGen Software,Bangalore,Full-time,Fresher,0.4,Master's,"Java, Python, SQL",9.01,38
+JOB0256,Data Analyst,TechNova Solutions,Bangalore,Full-time,Fresher,0.5,Bachelor's,"Python, SQL, Statistics",6.62,26
+JOB0257,Machine Learning Engineer,CloudEdge Systems,Bangalore,Full-time,1-3 Years,1.3,Master's,"Python, Deep Learning, Docker",11.87,37
+JOB0258,Data Scientist,CloudEdge Systems,Pune,Contract,5-8 Years,6.8,PhD,"Python, Machine Learning, SQL",14.96,52
+JOB0259,Data Analyst,Insight Analytics,Pune,Full-time,5-8 Years,7.9,Bachelor's,"Python, SQL, Excel, Power BI",10.18,42
+JOB0260,Data Scientist,CloudEdge Systems,Mumbai,Full-time,1-3 Years,2.0,Bachelor's,"R, Python, Statistics",11.03,51
+JOB0261,Data Analyst,Insight Analytics,Hyderabad,Contract,8+ Years,8.6,Bachelor's,"Python, SQL, Excel, Power BI",12.99,57
+JOB0262,AI Engineer,DigitalWorks Pvt Ltd,Hyderabad,Contract,5-8 Years,5.4,Master's,"Python, NLP, PyTorch",15.24,27
+JOB0263,Business Analyst,SmartData Technologies,Hyderabad,Full-time,3-5 Years,4.7,Master's,"Excel, SQL, Power BI",10.09,12
+JOB0264,Data Engineer,CloudEdge Systems,Bangalore,Part-time,3-5 Years,3.2,Bachelor's,"SQL, ETL, Hadoop",6.57,38
+JOB0265,Machine Learning Engineer,Insight Analytics,Bangalore,Contract,1-3 Years,2.2,Bachelor's,"Python, Machine Learning, TensorFlow",13.0,51
+JOB0266,Python Developer,InnovateLabs,Chennai,Internship,5-8 Years,6.4,Bachelor's,"Python, Django, SQL",4.38,49
+JOB0267,Data Analyst,CloudEdge Systems,Ahmedabad,Full-time,1-3 Years,1.5,PhD,"Python, SQL, Excel, Power BI",6.52,29
+JOB0268,Data Engineer,SmartData Technologies,Delhi,Full-time,3-5 Years,4.3,Master's,"Python, SQL, Hadoop, Spark",10.61,56
+JOB0269,Data Engineer,NextGen Software,Nanded,Internship,8+ Years,8.8,Bachelor's,"Python, AWS, Spark",4.29,1
+JOB0270,Python Developer,Insight Analytics,Bangalore,Contract,8+ Years,11.3,Master's,"Python, Pandas, SQL",17.58,40
+JOB0271,Python Developer,SmartData Technologies,Pune,Full-time,1-3 Years,2.4,Bachelor's,"Python, Pandas, SQL",8.77,45
+JOB0272,Business Analyst,SmartData Technologies,Bangalore,Full-time,1-3 Years,1.2,Master's,"SQL, Tableau, Excel",7.91,2
+JOB0273,Data Scientist,NextGen Software,Pune,Full-time,1-3 Years,2.7,Bachelor's,"Python, Deep Learning, SQL",9.42,39
+JOB0274,Data Analyst,SmartData Technologies,Hyderabad,Full-time,8+ Years,10.4,Master's,"SQL, Excel, Tableau",10.97,55
+JOB0275,Python Developer,,Ahmedabad,Full-time,3-5 Years,4.2,Master's,"Python, Flask, APIs",7.26,15
+JOB0276,Data Engineer,InnovateLabs,Hyderabad,Full-time,Fresher,0.8,Bachelor's,"Python, AWS, Spark",7.35,56
+JOB0277,Data Scientist,TechNova Solutions,Delhi,Full-time,5-8 Years,6.0,Bachelor's,"Python, Deep Learning, SQL",13.34,24
+JOB0278,Data Scientist,SmartData Technologies,Pune,Full-time,1-3 Years,2.5,Bachelor's,"Python, Machine Learning, SQL",9.33,9
+JOB0279,Machine Learning Engineer,InnovateLabs,Ahmedabad,Full-time,5-8 Years,7.7,Master's,"Python, Deep Learning, Docker",11.6,33
+JOB0280,Software Engineer,Insight Analytics,Hyderabad,Full-time,3-5 Years,3.3,Master's,"Java, Python, SQL",11.94,44
+JOB0281,Machine Learning Engineer,NextGen Software,Nanded,Full-time,8+ Years,9.1,Master's,"Python, Machine Learning, TensorFlow",10.57,28
+JOB0282,AI Engineer,NextGen Software,Pune,Part-time,Fresher,0.6,Bachelor's,"Python, Generative AI, Machine Learning",6.32,18
+JOB0283,Business Analyst,NextGen Software,Chennai,Contract,5-8 Years,6.1,Master's,"SQL, Tableau, Excel",10.32,34
+JOB0284,Data Analyst,NextGen Software,Bangalore,Internship,Fresher,0.7,Bachelor's,"SQL, Excel, Tableau",3.9,36
+JOB0285,Business Analyst,CloudEdge Systems,Mumbai,Contract,3-5 Years,4.6,Bachelor's,"Business Analysis, SQL, Power BI",10.03,25
+JOB0286,Machine Learning Engineer,TechNova Solutions,Pune,Part-time,8+ Years,9.1,Master's,"Python, PyTorch, AWS",9.22,38
+JOB0287,Data Analyst,InnovateLabs,Mumbai,Full-time,1-3 Years,1.4,Master's,"SQL, Excel, Tableau",7.15,34
+JOB0288,Business Analyst,Insight Analytics,Mumbai,Part-time,1-3 Years,1.7,Bachelor's,"Excel, SQL, Power BI",4.92,16
+JOB0289,AI Engineer,,Mumbai,Full-time,3-5 Years,4.8,Bachelor's,"Python, Deep Learning, TensorFlow",13.09,59
+JOB0290,Software Engineer,DigitalWorks Pvt Ltd,Ahmedabad,Full-time,1-3 Years,1.5,Master's,"Python, Django, SQL",6.9,4
+JOB0291,Data Scientist,NextGen Software,Nanded,Full-time,5-8 Years,8.0,PhD,"Python, Deep Learning, SQL",9.95,42
+JOB0292,Data Analyst,DataSphere Analytics,Hyderabad,Internship,1-3 Years,1.6,Bachelor's,"Python, SQL, Statistics",2.1,11
+JOB0293,Machine Learning Engineer,NextGen Software,Chennai,Full-time,8+ Years,9.2,Master's,"Python, Machine Learning, TensorFlow",15.6,20
+JOB0294,Software Engineer,Insight Analytics,Mumbai,Full-time,Fresher,1.0,Bachelor's,"Java, Python, SQL",8.48,46
+JOB0295,Business Analyst,SmartData Technologies,Hyderabad,Full-time,5-8 Years,6.4,Bachelor's,"SQL, Tableau, Excel",9.63,45
+JOB0296,Machine Learning Engineer,TechNova Solutions,Delhi,Contract,8+ Years,11.2,Bachelor's,"Python, PyTorch, AWS",17.42,4
+JOB0297,Machine Learning Engineer,,Pune,Full-time,5-8 Years,7.9,Bachelor's,"Python, Machine Learning, TensorFlow",14.54,18
+JOB0298,Data Scientist,InnovateLabs,Bangalore,Internship,5-8 Years,7.7,PhD,"Python, Machine Learning, SQL",7.33,34
+JOB0299,Python Developer,DataSphere Analytics,Pune,Full-time,3-5 Years,4.4,Master's,"Python, Pandas, SQL",9.88,37
+JOB0300,Data Scientist,InnovateLabs,Chennai,Full-time,8+ Years,8.9,Bachelor's,"Python, Deep Learning, SQL",13.72,48
+JOB0301,Machine Learning Engineer,CloudEdge Systems,Mumbai,Full-time,Fresher,0.5,Bachelor's,"Python, Machine Learning, TensorFlow",12.86,7
+JOB0302,Data Analyst,InnovateLabs,Hyderabad,Internship,5-8 Years,7.8,Bachelor's,"SQL, Excel, Tableau",3.43,45
+JOB0303,Software Engineer,DigitalWorks Pvt Ltd,Pune,Full-time,1-3 Years,2.3,Bachelor's,"Java, Python, SQL",7.97,1
+JOB0304,Data Analyst,Insight Analytics,Bangalore,Full-time,1-3 Years,2.9,Bachelor's,"Python, SQL, Statistics",8.01,12
+JOB0305,Data Scientist,DigitalWorks Pvt Ltd,Chennai,Internship,1-3 Years,2.8,Master's,"Python, Machine Learning, SQL",3.41,8
+JOB0306,Data Analyst,Insight Analytics,Mumbai,Full-time,5-8 Years,5.6,Bachelor's,"Python, SQL, Statistics",9.94,1
+JOB0307,Machine Learning Engineer,CloudEdge Systems,Bangalore,Full-time,5-8 Years,6.0,Master's,"Python, PyTorch, AWS",13.58,53
+JOB0308,AI Engineer,DigitalWorks Pvt Ltd,Mumbai,Part-time,Fresher,0.1,Bachelor's,"Python, Deep Learning, TensorFlow",7.76,6
+JOB0309,Business Analyst,Insight Analytics,Delhi,Full-time,1-3 Years,1.6,Bachelor's,"Business Analysis, SQL, Power BI",5.84,51
+JOB0310,Python Developer,TechNova Solutions,Delhi,Full-time,5-8 Years,6.3,Bachelor's,"Python, Django, SQL",8.92,51
+JOB0311,Data Engineer,Insight Analytics,Bangalore,Internship,8+ Years,11.2,Master's,"Python, SQL, Hadoop, Spark",7.52,55
+JOB0312,Python Developer,Insight Analytics,Delhi,Full-time,1-3 Years,2.6,PhD,"Python, Flask, APIs",8.42,17
+JOB0313,Software Engineer,NextGen Software,Nanded,Full-time,5-8 Years,7.3,Bachelor's,"Java, Python, SQL",7.58,2
+JOB0314,AI Engineer,NextGen Software,Bangalore,Full-time,3-5 Years,4.8,Master's,"Python, NLP, PyTorch",15.05,34
+JOB0315,Machine Learning Engineer,TechNova Solutions,Bangalore,Internship,1-3 Years,1.7,Master's,"Python, Deep Learning, Docker",4.96,1
+JOB0316,Data Analyst,NextGen Software,Pune,Contract,3-5 Years,3.8,Bachelor's,"Python, SQL, Statistics",9.63,40
+JOB0317,Data Engineer,SmartData Technologies,Delhi,Full-time,5-8 Years,5.3,Bachelor's,"Python, AWS, Spark",12.73,6
+JOB0318,AI Engineer,Insight Analytics,Bangalore,Full-time,5-8 Years,7.9,Master's,"Python, Deep Learning, TensorFlow",16.25,4
+JOB0319,Software Engineer,Insight Analytics,Mumbai,Full-time,5-8 Years,6.5,Bachelor's,"Python, Django, SQL",12.18,53
+JOB0320,Machine Learning Engineer,InnovateLabs,Bangalore,Part-time,3-5 Years,3.7,Bachelor's,"Python, PyTorch, AWS",7.63,33
+JOB0321,Data Engineer,TechNova Solutions,Bangalore,Full-time,3-5 Years,3.7,Bachelor's,"Python, SQL, Hadoop, Spark",12.15,14
+JOB0322,Python Developer,SmartData Technologies,Pune,Full-time,3-5 Years,5.0,PhD,"Python, Django, SQL",12.34,26
+JOB0323,Data Engineer,TechNova Solutions,Hyderabad,Internship,Fresher,0.5,Bachelor's,"Python, AWS, Spark",2.09,12
+JOB0324,Python Developer,DataSphere Analytics,Mumbai,Full-time,3-5 Years,4.5,Bachelor's,"Python, Flask, APIs",9.41,43
+JOB0325,Python Developer,DigitalWorks Pvt Ltd,Bangalore,Full-time,8+ Years,8.3,Master's,"Python, Pandas, SQL",12.61,34
+JOB0326,Data Engineer,NextGen Software,Nanded,Full-time,3-5 Years,3.9,Bachelor's,"SQL, ETL, Hadoop",7.47,60
+JOB0327,Data Scientist,TechNova Solutions,Ahmedabad,Full-time,Fresher,0.4,Bachelor's,"R, Python, Statistics",7.32,34
+JOB0328,Data Engineer,InnovateLabs,Delhi,Internship,3-5 Years,3.8,Bachelor's,"SQL, ETL, Hadoop",3.79,36
+JOB0329,Data Analyst,DataSphere Analytics,Chennai,Full-time,5-8 Years,5.6,Bachelor's,"Python, SQL, Statistics",7.93,25
+JOB0330,Software Engineer,InnovateLabs,Ahmedabad,Full-time,1-3 Years,2.4,Bachelor's,"Java, Python, SQL",6.88,41
+JOB0331,Data Scientist,DigitalWorks Pvt Ltd,Delhi,Contract,Fresher,0.2,Master's,"R, Python, Statistics",9.0,58
+JOB0332,Data Analyst,DataSphere Analytics,Delhi,Contract,1-3 Years,1.7,Bachelor's,"Python, SQL, Statistics",4.92,56
+JOB0333,Data Engineer,SmartData Technologies,Pune,Full-time,5-8 Years,7.2,Bachelor's,"Python, AWS, Spark",12.2,39
+JOB0334,Data Analyst,TechNova Solutions,Ahmedabad,Contract,5-8 Years,7.0,Bachelor's,"Python, SQL, Excel, Power BI",8.75,59
+JOB0335,Software Engineer,Insight Analytics,Chennai,Internship,1-3 Years,2.3,Bachelor's,"JavaScript, React, Node.js",3.92,13
+JOB0336,Software Engineer,NextGen Software,Hyderabad,Internship,Fresher,0.5,Bachelor's,"Python, Django, SQL",4.39,38
+JOB0337,Data Scientist,SmartData Technologies,Pune,Full-time,1-3 Years,1.3,Bachelor's,"Python, Machine Learning, SQL",9.44,19
+JOB0338,Machine Learning Engineer,TechNova Solutions,Chennai,Full-time,1-3 Years,1.5,Bachelor's,"Python, Machine Learning, TensorFlow",9.95,58
+JOB0339,Software Engineer,DigitalWorks Pvt Ltd,Ahmedabad,Internship,1-3 Years,2.8,Bachelor's,"JavaScript, React, Node.js",2.55,49
+JOB0340,Business Analyst,SmartData Technologies,Ahmedabad,Full-time,3-5 Years,4.0,Master's,"SQL, Tableau, Excel",7.16,12
+JOB0341,Python Developer,SmartData Technologies,Pune,Full-time,1-3 Years,2.2,Master's,"Python, Django, SQL",7.84,45
+JOB0342,Data Analyst,DigitalWorks Pvt Ltd,Delhi,Full-time,5-8 Years,7.2,Bachelor's,"Python, SQL, Excel, Power BI",7.41,43
+JOB0343,AI Engineer,SmartData Technologies,Ahmedabad,Full-time,Fresher,0.6,Bachelor's,"Python, NLP, PyTorch",7.34,15
+JOB0344,Data Engineer,Insight Analytics,Nanded,Part-time,8+ Years,9.7,Master's,,6.53,47
+JOB0345,Data Scientist,DataSphere Analytics,Bangalore,Full-time,1-3 Years,2.1,Bachelor's,"R, Python, Statistics",9.48,29
+JOB0346,Python Developer,DataSphere Analytics,Bangalore,Part-time,3-5 Years,3.2,Master's,"Python, Flask, APIs",6.45,53
+JOB0347,Data Analyst,TechNova Solutions,Bangalore,Full-time,5-8 Years,7.0,Master's,"Python, SQL, Statistics",11.84,1
+JOB0348,Business Analyst,Insight Analytics,Chennai,Full-time,1-3 Years,1.3,Bachelor's,"Excel, SQL, Power BI",7.06,2
+JOB0349,Data Analyst,CloudEdge Systems,Ahmedabad,Full-time,Fresher,0.4,Bachelor's,"SQL, Excel, Tableau",4.0,57
+JOB0350,AI Engineer,InnovateLabs,Nanded,Full-time,3-5 Years,5.0,Bachelor's,"Python, NLP, PyTorch",9.68,29
+JOB0351,Machine Learning Engineer,CloudEdge Systems,Bangalore,Full-time,1-3 Years,1.7,Bachelor's,"Python, PyTorch, AWS",10.99,31
+JOB0352,Machine Learning Engineer,SmartData Technologies,Ahmedabad,Full-time,1-3 Years,2.3,Bachelor's,"Python, PyTorch, AWS",8.96,15
+JOB0353,AI Engineer,Insight Analytics,Bangalore,Full-time,1-3 Years,2.1,Bachelor's,"Python, NLP, PyTorch",11.87,28
+JOB0354,Data Analyst,SmartData Technologies,Mumbai,Part-time,5-8 Years,7.7,Bachelor's,"SQL, Excel, Tableau",8.69,37
+JOB0355,Business Analyst,DataSphere Analytics,Hyderabad,Full-time,1-3 Years,1.8,Bachelor's,"Business Analysis, SQL, Power BI",7.21,30
+JOB0356,Software Engineer,CloudEdge Systems,Delhi,Full-time,1-3 Years,1.2,Bachelor's,"JavaScript, React, Node.js",8.15,32
+JOB0357,Data Analyst,SmartData Technologies,Mumbai,Part-time,3-5 Years,4.3,Bachelor's,"SQL, Excel, Tableau",5.55,13
+JOB0358,Machine Learning Engineer,SmartData Technologies,Hyderabad,Contract,Fresher,0.8,Bachelor's,"Python, Deep Learning, Docker",9.63,20
+JOB0359,Data Scientist,InnovateLabs,Delhi,Full-time,1-3 Years,1.4,Bachelor's,"Python, Machine Learning, SQL",9.63,56
+JOB0360,Data Engineer,SmartData Technologies,Delhi,Full-time,1-3 Years,1.4,Master's,"SQL, ETL, Hadoop",8.3,38
+JOB0361,Data Scientist,CloudEdge Systems,Chennai,Internship,5-8 Years,7.1,Master's,"R, Python, Statistics",6.5,3
+JOB0362,Business Analyst,NextGen Software,Pune,Full-time,Fresher,0.4,Bachelor's,"Business Analysis, SQL, Power BI",6.38,54
+JOB0363,Machine Learning Engineer,InnovateLabs,Bangalore,Full-time,3-5 Years,3.5,Master's,"Python, PyTorch, AWS",13.06,43
+JOB0364,Data Scientist,Insight Analytics,Hyderabad,Full-time,1-3 Years,1.8,Bachelor's,"Python, Machine Learning, SQL",9.1,43
+JOB0365,Data Scientist,CloudEdge Systems,Delhi,Contract,3-5 Years,4.1,Bachelor's,"Python, Deep Learning, SQL",10.42,51
+JOB0366,Business Analyst,InnovateLabs,Nanded,Internship,5-8 Years,6.4,Bachelor's,"Business Analysis, SQL, Power BI",3.31,27
+JOB0367,Python Developer,Insight Analytics,Ahmedabad,Full-time,8+ Years,8.7,Master's,"Python, Pandas, SQL",11.54,1
+JOB0368,AI Engineer,TechNova Solutions,Chennai,Full-time,1-3 Years,2.4,Master's,"Python, Deep Learning, TensorFlow",10.86,50
+JOB0369,Software Engineer,TechNova Solutions,Delhi,Contract,3-5 Years,4.4,Master's,"JavaScript, React, Node.js",12.61,13
+JOB0370,Business Analyst,TechNova Solutions,Hyderabad,Full-time,1-3 Years,2.8,Bachelor's,"Business Analysis, SQL, Power BI",6.92,8
+JOB0371,Business Analyst,SmartData Technologies,Pune,Full-time,8+ Years,10.5,Master's,"Business Analysis, SQL, Power BI",12.11,24
+JOB0372,AI Engineer,CloudEdge Systems,Chennai,Full-time,1-3 Years,1.4,Bachelor's,"Python, Deep Learning, TensorFlow",9.18,31
+JOB0373,Business Analyst,InnovateLabs,Bangalore,Full-time,1-3 Years,1.9,Master's,"SQL, Tableau, Excel",8.2,50
+JOB0374,Python Developer,DataSphere Analytics,Bangalore,Internship,3-5 Years,3.1,Bachelor's,"Python, Pandas, SQL",3.2,3
+JOB0375,Business Analyst,Insight Analytics,Delhi,Full-time,Fresher,0.0,Bachelor's,"Excel, SQL, Power BI",5.19,49
+JOB0376,Software Engineer,Insight Analytics,Delhi,Contract,8+ Years,8.7,Master's,"JavaScript, React, Node.js",15.35,56
+JOB0377,Python Developer,NextGen Software,Bangalore,Contract,1-3 Years,2.1,Bachelor's,"Python, Flask, APIs",8.13,44
+JOB0378,AI Engineer,NextGen Software,Bangalore,Full-time,Fresher,0.5,Master's,"Python, NLP, PyTorch",10.92,34
+JOB0379,Data Analyst,TechNova Solutions,Bangalore,Part-time,3-5 Years,4.3,Master's,"Python, SQL, Statistics",5.66,32
+JOB0380,Data Analyst,DataSphere Analytics,Nanded,Part-time,1-3 Years,2.0,Bachelor's,"SQL, Excel, Tableau",2.05,7
+JOB0381,Data Analyst,DataSphere Analytics,Ahmedabad,Full-time,Fresher,0.7,Bachelor's,"Python, SQL, Excel, Power BI",4.54,13
+JOB0382,Data Analyst,SmartData Technologies,Hyderabad,Full-time,3-5 Years,3.5,Bachelor's,"Python, SQL, Statistics",7.8,38
+JOB0383,AI Engineer,SmartData Technologies,Bangalore,Full-time,5-8 Years,6.5,Master's,"Python, Deep Learning, TensorFlow",14.72,6
+JOB0384,Data Engineer,DataSphere Analytics,Mumbai,Full-time,1-3 Years,1.2,Master's,"SQL, ETL, Hadoop",10.26,52
+JOB0385,Data Analyst,NextGen Software,Bangalore,Full-time,1-3 Years,2.7,Bachelor's,"Python, SQL, Excel, Power BI",7.0,52
+JOB0386,Business Analyst,InnovateLabs,Mumbai,Full-time,3-5 Years,3.7,Bachelor's,"SQL, Tableau, Excel",8.98,23
+JOB0387,Data Engineer,CloudEdge Systems,Hyderabad,Full-time,1-3 Years,2.8,Bachelor's,"Python, SQL, Hadoop, Spark",10.66,17
+JOB0388,Data Engineer,Insight Analytics,Nanded,Full-time,1-3 Years,2.4,Master's,"Python, AWS, Spark",7.36,55
+JOB0389,Data Analyst,InnovateLabs,Hyderabad,Part-time,3-5 Years,3.9,Bachelor's,"SQL, Excel, Tableau",5.8,1
+JOB0390,Software Engineer,DataSphere Analytics,Bangalore,Full-time,1-3 Years,1.7,Master's,"Java, Python, SQL",9.62,8
+JOB0391,Machine Learning Engineer,TechNova Solutions,Bangalore,Full-time,3-5 Years,3.4,Bachelor's,"Python, Deep Learning, Docker",13.59,21
+JOB0392,AI Engineer,SmartData Technologies,Ahmedabad,Part-time,1-3 Years,1.6,Bachelor's,"Python, Deep Learning, TensorFlow",4.87,51
+JOB0393,Machine Learning Engineer,DigitalWorks Pvt Ltd,Mumbai,Internship,8+ Years,10.7,Bachelor's,"Python, Machine Learning, TensorFlow",7.49,38
+JOB0394,Python Developer,InnovateLabs,Hyderabad,Full-time,5-8 Years,5.8,PhD,"Python, Flask, APIs",10.87,41
+JOB0395,Software Engineer,SmartData Technologies,Hyderabad,Full-time,5-8 Years,5.8,Bachelor's,"Java, Python, SQL",10.02,12
+JOB0396,AI Engineer,DataSphere Analytics,Nanded,Full-time,8+ Years,8.2,Bachelor's,"Python, Generative AI, Machine Learning",9.98,14
+JOB0397,Business Analyst,DataSphere Analytics,Pune,Full-time,1-3 Years,1.0,Master's,"SQL, Tableau, Excel",5.96,27
+JOB0398,AI Engineer,CloudEdge Systems,Chennai,Full-time,1-3 Years,2.3,Bachelor's,"Python, Generative AI, Machine Learning",10.0,12
+JOB0399,Python Developer,Insight Analytics,Mumbai,Full-time,3-5 Years,3.5,Bachelor's,"Python, Flask, APIs",9.05,21
+JOB0400,Data Engineer,InnovateLabs,Pune,Full-time,1-3 Years,2.0,Bachelor's,"Python, AWS, Spark",8.9,24
+JOB0401,Data Analyst,SmartData Technologies,Pune,Part-time,8+ Years,9.4,Master's,"SQL, Excel, Tableau",6.67,3
+JOB0402,AI Engineer,TechNova Solutions,Pune,Full-time,8+ Years,8.3,Master's,"Python, NLP, PyTorch",16.44,55
+JOB0403,Business Analyst,DigitalWorks Pvt Ltd,Bangalore,Contract,3-5 Years,3.5,Master's,,9.41,26
+JOB0404,Business Analyst,NextGen Software,Hyderabad,Full-time,3-5 Years,3.5,Master's,"Business Analysis, SQL, Power BI",8.96,21
+JOB0405,AI Engineer,NextGen Software,Mumbai,Full-time,Fresher,0.0,Bachelor's,"Python, Deep Learning, TensorFlow",10.74,54
+JOB0406,Data Scientist,TechNova Solutions,Chennai,Contract,Fresher,0.9,Bachelor's,"Python, Machine Learning, SQL",7.4,26
+JOB0407,Business Analyst,TechNova Solutions,Bangalore,Full-time,1-3 Years,2.8,Bachelor's,"Excel, SQL, Power BI",8.69,31
+JOB0408,Business Analyst,InnovateLabs,Bangalore,Full-time,Fresher,0.9,Bachelor's,"SQL, Tableau, Excel",7.35,26
+JOB0409,Software Engineer,CloudEdge Systems,Mumbai,Full-time,3-5 Years,4.9,Master's,"Java, Python, SQL",11.15,43
+JOB0410,Python Developer,TechNova Solutions,Delhi,Full-time,3-5 Years,3.5,PhD,"Python, Django, SQL",8.5,7
+JOB0411,Machine Learning Engineer,CloudEdge Systems,Nanded,Full-time,1-3 Years,1.8,Master's,"Python, Deep Learning, Docker",7.54,28
+JOB0412,AI Engineer,DigitalWorks Pvt Ltd,Bangalore,Full-time,1-3 Years,2.0,Bachelor's,"Python, Generative AI, Machine Learning",12.13,9
+JOB0413,Python Developer,Insight Analytics,Mumbai,Full-time,Fresher,0.5,Bachelor's,"Python, Pandas, SQL",6.42,53
+JOB0414,Business Analyst,DataSphere Analytics,Pune,Contract,5-8 Years,5.4,Bachelor's,"SQL, Tableau, Excel",8.79,44
+JOB0415,Software Engineer,SmartData Technologies,Chennai,Full-time,1-3 Years,2.7,Bachelor's,"Java, Python, SQL",8.72,3
+JOB0416,Data Scientist,TechNova Solutions,Bangalore,Full-time,3-5 Years,3.6,Bachelor's,"Python, Deep Learning, SQL",11.81,35
+JOB0417,Data Engineer,SmartData Technologies,Bangalore,Internship,5-8 Years,5.8,Bachelor's,"SQL, ETL, Hadoop",4.21,9
+JOB0418,Python Developer,DigitalWorks Pvt Ltd,Bangalore,Full-time,1-3 Years,1.6,Bachelor's,"Python, Flask, APIs",7.06,48
+JOB0419,Python Developer,SmartData Technologies,Delhi,Full-time,5-8 Years,7.1,Master's,"Python, Django, SQL",10.91,35
+JOB0420,Machine Learning Engineer,DigitalWorks Pvt Ltd,Bangalore,Full-time,8+ Years,9.2,Bachelor's,"Python, PyTorch, AWS",18.51,42
+JOB0421,Data Scientist,CloudEdge Systems,Bangalore,Contract,1-3 Years,1.0,Master's,"Python, Deep Learning, SQL",10.48,42
+JOB0422,Software Engineer,InnovateLabs,Pune,Full-time,8+ Years,10.2,Master's,"Python, Django, SQL",14.11,47
+JOB0423,Python Developer,Insight Analytics,Hyderabad,Full-time,Fresher,0.4,Bachelor's,"Python, Django, SQL",6.08,29
+JOB0424,Python Developer,SmartData Technologies,Ahmedabad,Full-time,1-3 Years,1.7,Master's,"Python, Django, SQL",5.82,3
+JOB0425,Python Developer,SmartData Technologies,Pune,Full-time,3-5 Years,3.4,Bachelor's,"Python, Pandas, SQL",7.18,36
+JOB0426,Data Scientist,Insight Analytics,Pune,Full-time,1-3 Years,2.7,Bachelor's,"Python, Deep Learning, SQL",8.76,54
+JOB0427,Business Analyst,InnovateLabs,Mumbai,Full-time,5-8 Years,5.9,Bachelor's,"SQL, Tableau, Excel",10.23,32
+JOB0428,Software Engineer,DigitalWorks Pvt Ltd,Bangalore,Full-time,1-3 Years,2.5,Master's,"Java, Python, SQL",11.02,13
+JOB0429,Data Scientist,NextGen Software,Pune,Contract,8+ Years,11.9,Master's,"Python, Machine Learning, SQL",17.09,10
+JOB0430,Data Scientist,Insight Analytics,Hyderabad,Full-time,3-5 Years,4.7,PhD,"R, Python, Statistics",13.51,11
+JOB0431,Python Developer,NextGen Software,Bangalore,Full-time,Fresher,0.8,Master's,"Python, Django, SQL",8.45,42
+JOB0432,AI Engineer,CloudEdge Systems,Hyderabad,Full-time,Fresher,1.0,Master's,"Python, Generative AI, Machine Learning",11.64,49
+JOB0433,Data Engineer,Insight Analytics,Hyderabad,Full-time,Fresher,0.0,Bachelor's,"Python, SQL, Hadoop, Spark",7.43,56
+JOB0434,Data Analyst,NextGen Software,Delhi,Full-time,Fresher,0.1,Master's,"Python, SQL, Statistics",6.03,16
+JOB0435,Data Scientist,TechNova Solutions,Bangalore,Full-time,8+ Years,9.3,Bachelor's,"Python, Machine Learning, SQL",14.95,1
+JOB0436,Machine Learning Engineer,Insight Analytics,Hyderabad,Contract,3-5 Years,4.3,Bachelor's,"Python, Deep Learning, Docker",13.29,28
+JOB0437,Software Engineer,Insight Analytics,Hyderabad,Contract,1-3 Years,2.1,Bachelor's,"JavaScript, React, Node.js",8.5,36
+JOB0438,Business Analyst,SmartData Technologies,Mumbai,Full-time,5-8 Years,8.0,Bachelor's,"Excel, SQL, Power BI",11.54,18
+JOB0439,Data Engineer,Insight Analytics,Mumbai,Internship,5-8 Years,5.2,Bachelor's,"SQL, ETL, Hadoop",6.24,14
+JOB0440,Business Analyst,Insight Analytics,Mumbai,Full-time,5-8 Years,7.8,Bachelor's,"Excel, SQL, Power BI",9.07,52
+JOB0441,Python Developer,CloudEdge Systems,Delhi,Full-time,1-3 Years,2.8,Bachelor's,"Python, Pandas, SQL",7.67,25
+JOB0442,Python Developer,DigitalWorks Pvt Ltd,Pune,Full-time,8+ Years,8.9,Bachelor's,"Python, Pandas, SQL",10.95,39
+JOB0443,Python Developer,CloudEdge Systems,Nanded,Internship,3-5 Years,4.7,Bachelor's,"Python, Django, SQL",1.5,2
+JOB0444,Business Analyst,Insight Analytics,Ahmedabad,Full-time,1-3 Years,1.3,Bachelor's,"Business Analysis, SQL, Power BI",4.86,20
+JOB0445,Business Analyst,NextGen Software,Mumbai,Part-time,5-8 Years,6.5,Bachelor's,"Excel, SQL, Power BI",6.3,47
+JOB0446,Business Analyst,CloudEdge Systems,Chennai,Internship,1-3 Years,1.3,Bachelor's,"SQL, Tableau, Excel",3.4,13
+JOB0447,Software Engineer,Insight Analytics,Chennai,Full-time,Fresher,0.1,Bachelor's,"JavaScript, React, Node.js",6.85,34
+JOB0448,Machine Learning Engineer,SmartData Technologies,Mumbai,Full-time,1-3 Years,1.6,Master's,"Python, Deep Learning, Docker",11.23,47
+JOB0449,AI Engineer,NextGen Software,Bangalore,Full-time,3-5 Years,3.4,Bachelor's,"Python, Generative AI, Machine Learning",15.17,16
+JOB0450,Data Analyst,DigitalWorks Pvt Ltd,Nanded,Full-time,5-8 Years,6.0,Bachelor's,"Python, SQL, Excel, Power BI",6.49,58
+JOB0451,Machine Learning Engineer,TechNova Solutions,Pune,Full-time,1-3 Years,1.2,PhD,"Python, PyTorch, AWS",10.66,14
+JOB0452,Data Engineer,InnovateLabs,Bangalore,Full-time,8+ Years,9.8,Bachelor's,"SQL, ETL, Hadoop",15.24,25
+JOB0453,Machine Learning Engineer,CloudEdge Systems,Bangalore,Full-time,3-5 Years,3.9,Bachelor's,"Python, Deep Learning, Docker",12.37,49
+JOB0454,Data Analyst,TechNova Solutions,Bangalore,Full-time,3-5 Years,4.2,Bachelor's,"Python, SQL, Excel, Power BI",8.24,60
+JOB0455,Data Scientist,InnovateLabs,Bangalore,Full-time,1-3 Years,1.1,Bachelor's,"Python, Machine Learning, SQL",9.37,36
+JOB0456,Data Scientist,CloudEdge Systems,Hyderabad,Full-time,3-5 Years,4.8,Bachelor's,"R, Python, Statistics",10.26,59
+JOB0457,Python Developer,TechNova Solutions,Hyderabad,Full-time,3-5 Years,3.6,Bachelor's,"Python, Flask, APIs",9.6,30
+JOB0458,Software Engineer,DigitalWorks Pvt Ltd,Chennai,Full-time,1-3 Years,2.4,PhD,"JavaScript, React, Node.js",8.88,6
+JOB0459,Software Engineer,SmartData Technologies,Bangalore,Internship,3-5 Years,3.8,Bachelor's,"JavaScript, React, Node.js",4.19,15
+JOB0460,Data Scientist,DigitalWorks Pvt Ltd,Delhi,Full-time,Fresher,0.1,Bachelor's,"Python, Deep Learning, SQL",7.98,33
+JOB0461,Software Engineer,DataSphere Analytics,Bangalore,Full-time,1-3 Years,1.4,Bachelor's,"JavaScript, React, Node.js",8.62,55
+JOB0462,Data Analyst,CloudEdge Systems,Bangalore,Full-time,8+ Years,10.2,Bachelor's,"Python, SQL, Statistics",13.25,58
+JOB0463,Business Analyst,DigitalWorks Pvt Ltd,Chennai,Full-time,3-5 Years,4.5,Bachelor's,"Business Analysis, SQL, Power BI",7.87,29
+JOB0464,Python Developer,InnovateLabs,Hyderabad,Full-time,1-3 Years,2.0,Bachelor's,"Python, Pandas, SQL",6.53,47
+JOB0465,Software Engineer,CloudEdge Systems,Bangalore,Full-time,Fresher,0.6,Master's,"JavaScript, React, Node.js",10.71,1
+JOB0466,Data Scientist,SmartData Technologies,Nanded,Internship,3-5 Years,3.9,PhD,"Python, Deep Learning, SQL",4.57,14
+JOB0467,Data Analyst,NextGen Software,Bangalore,Internship,8+ Years,10.7,Bachelor's,"Python, SQL, Excel, Power BI",5.96,57
+JOB0468,Software Engineer,CloudEdge Systems,Delhi,Full-time,5-8 Years,6.2,Bachelor's,"JavaScript, React, Node.js",11.28,48
+JOB0469,Machine Learning Engineer,SmartData Technologies,Nanded,Full-time,5-8 Years,5.9,Bachelor's,"Python, Machine Learning, TensorFlow",7.42,10
+JOB0470,Python Developer,NextGen Software,Bangalore,Full-time,8+ Years,8.3,Bachelor's,"Python, Pandas, SQL",14.01,39
+JOB0471,Business Analyst,SmartData Technologies,Delhi,Full-time,5-8 Years,5.7,Bachelor's,"Business Analysis, SQL, Power BI",8.99,60
+JOB0472,Machine Learning Engineer,InnovateLabs,Pune,Full-time,5-8 Years,7.6,Master's,"Python, PyTorch, AWS",15.44,40
+JOB0473,AI Engineer,SmartData Technologies,Delhi,Full-time,3-5 Years,5.0,Master's,"Python, Deep Learning, TensorFlow",14.39,43
+JOB0474,Machine Learning Engineer,SmartData Technologies,Pune,Full-time,8+ Years,9.4,Master's,"Python, Deep Learning, Docker",14.77,45
+JOB0475,Software Engineer,CloudEdge Systems,Bangalore,Full-time,5-8 Years,5.8,Bachelor's,"Python, Django, SQL",11.97,31
+JOB0476,Business Analyst,Insight Analytics,Delhi,Full-time,Fresher,0.4,Master's,"Excel, SQL, Power BI",7.91,2
+JOB0477,Data Analyst,TechNova Solutions,Mumbai,Part-time,3-5 Years,3.6,Bachelor's,"SQL, Excel, Tableau",4.82,33
+JOB0478,AI Engineer,Insight Analytics,Bangalore,Full-time,3-5 Years,3.8,Master's,"Python, Deep Learning, TensorFlow",12.76,60
+JOB0479,Data Engineer,TechNova Solutions,Hyderabad,Contract,1-3 Years,2.3,Bachelor's,"Python, AWS, Spark",9.09,34
+JOB0480,AI Engineer,NextGen Software,Bangalore,Full-time,1-3 Years,1.9,Bachelor's,"Python, NLP, PyTorch",12.48,48
+JOB0481,Machine Learning Engineer,DataSphere Analytics,Bangalore,Full-time,5-8 Years,7.1,Bachelor's,"Python, Machine Learning, TensorFlow",16.96,4
+JOB0482,Data Analyst,CloudEdge Systems,Bangalore,Full-time,3-5 Years,4.4,Master's,"Python, SQL, Statistics",10.03,13
+JOB0483,Software Engineer,DataSphere Analytics,Nanded,Full-time,1-3 Years,1.3,Bachelor's,"Java, Python, SQL",3.9,60
+JOB0484,AI Engineer,NextGen Software,Bangalore,Full-time,1-3 Years,1.8,PhD,"Python, Generative AI, Machine Learning",12.48,29
+JOB0485,Data Engineer,DigitalWorks Pvt Ltd,Pune,Internship,5-8 Years,7.1,Bachelor's,"Python, SQL, Hadoop, Spark",4.94,28
+JOB0486,Data Scientist,CloudEdge Systems,Delhi,Full-time,1-3 Years,1.9,Master's,"R, Python, Statistics",10.53,60
+JOB0487,Machine Learning Engineer,SmartData Technologies,Hyderabad,Full-time,5-8 Years,7.7,Master's,"Python, Deep Learning, Docker",15.85,36
+JOB0488,Python Developer,TechNova Solutions,Bangalore,Full-time,Fresher,0.5,Bachelor's,"Python, Pandas, SQL",6.3,45
+JOB0489,Business Analyst,DataSphere Analytics,Ahmedabad,Full-time,5-8 Years,5.4,PhD,"Excel, SQL, Power BI",8.79,11
+JOB0490,Data Scientist,SmartData Technologies,Mumbai,Contract,1-3 Years,2.6,Bachelor's,"Python, Deep Learning, SQL",10.53,54
+JOB0491,AI Engineer,CloudEdge Systems,Mumbai,Full-time,5-8 Years,7.8,Master's,"Python, Deep Learning, TensorFlow",17.13,54
+JOB0492,Software Engineer,CloudEdge Systems,Hyderabad,Full-time,1-3 Years,1.1,Bachelor's,"JavaScript, React, Node.js",7.73,23
+JOB0493,Data Analyst,DataSphere Analytics,Chennai,Part-time,3-5 Years,3.4,Bachelor's,"Python, SQL, Statistics",3.62,48
+JOB0494,Business Analyst,NextGen Software,Ahmedabad,Full-time,5-8 Years,7.2,Bachelor's,"SQL, Tableau, Excel",6.13,15
+JOB0495,Data Engineer,DataSphere Analytics,Mumbai,Full-time,3-5 Years,3.5,PhD,"Python, SQL, Hadoop, Spark",11.57,30
+JOB0496,Software Engineer,TechNova Solutions,Hyderabad,Full-time,Fresher,0.3,Bachelor's,"JavaScript, React, Node.js",7.49,29
+JOB0497,Python Developer,DigitalWorks Pvt Ltd,Hyderabad,Full-time,1-3 Years,1.1,Bachelor's,"Python, Django, SQL",5.47,21
+JOB0498,Business Analyst,CloudEdge Systems,Chennai,Full-time,5-8 Years,7.6,Bachelor's,"SQL, Tableau, Excel",9.92,4
+JOB0499,Business Analyst,SmartData Technologies,Delhi,Full-time,3-5 Years,5.0,Master's,"Business Analysis, SQL, Power BI",8.47,57
+JOB0500,Data Scientist,InnovateLabs,Bangalore,Contract,3-5 Years,3.6,Master's,"R, Python, Statistics",11.59,18
+JOB0152,Data Scientist,SmartData Technologies,Mumbai,Full-time,Fresher,0.0,Master's,"Python, Deep Learning, SQL",9.73,8
+JOB0425,Python Developer,SmartData Technologies,Pune,Full-time,3-5 Years,3.4,Bachelor's,"Python, Pandas, SQL",7.18,36
+JOB0155,Machine Learning Engineer,SmartData Technologies,Nanded,Full-time,1-3 Years,2.3,Master's,"Python, PyTorch, AWS",8.81,25
+JOB0191,Data Analyst,TechNova Solutions,Delhi,Full-time,Fresher,0.1,PhD,"Python, SQL, Excel, Power BI",6.7,52
+JOB0132,Software Engineer,Insight Analytics,Pune,Full-time,1-3 Years,1.4,Bachelor's,"Python, Django, SQL",9.01,52
