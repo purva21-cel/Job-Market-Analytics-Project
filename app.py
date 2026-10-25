@@ -640,8 +640,23 @@ elif page == "Model Performance":
 
             st.stop()
 
-        X = data.drop(columns=[target])
-        y = data[target]
+       X = data.drop(columns=[target])
+y = data[target]
+
+# Remove identifier columns
+id_columns = [
+    col for col in X.columns
+    if col.lower().replace("_", "").replace(" ", "")
+    in [
+        "id", "jobid", "companyid",
+        "employeeid", "recordid"
+    ]
+]
+
+X = X.drop(columns=id_columns, errors="ignore")
+
+# Remove columns with only one unique value
+X = X.loc[:, X.nunique(dropna=True) > 1]
 
         # Remove columns that contain no useful information
 
