@@ -113,9 +113,21 @@ if "model_results" not in st.session_state:
 if "training_target" not in st.session_state:
     st.session_state.training_target = None
 
+if "training_features" not in st.session_state:
+    st.session_state.training_features = []
+
+if "training_data" not in st.session_state:
+    st.session_state.training_data = None
+
+if "training_numeric_features" not in st.session_state:
+    st.session_state.training_numeric_features = []
+
+if "training_categorical_features" not in st.session_state:
+    st.session_state.training_categorical_features = []
+
 
 # --------------------------------------------------
-# SIDEBAR
+# SIDEBAR AND CSV UPLOAD
 # --------------------------------------------------
 
 st.sidebar.markdown("# 💼 JobLens")
@@ -145,32 +157,52 @@ if uploaded_file is not None:
             st.sidebar.error("The dataset is empty.")
 
         else:
-            st.session_state.dataset = uploaded_df
+            current_signature = (
+                uploaded_file.name,
+                uploaded_file.size
+            )
+
+            if st.session_state.get("dataset_signature") != current_signature:
+
+                st.session_state.dataset = uploaded_df
+                st.session_state.dataset_signature = current_signature
+
+                st.session_state.trained_models = {}
+                st.session_state.model_results = None
+                st.session_state.training_target = None
+                st.session_state.training_features = []
+                st.session_state.training_data = None
+                st.session_state.training_numeric_features = []
+                st.session_state.training_categorical_features = []
 
     except Exception as e:
         st.sidebar.error(f"Could not read CSV: {e}")
 
 
+# --------------------------------------------------
+# WELCOME PAGE
+# --------------------------------------------------
+
 if st.session_state.dataset is None:
 
-    st.title("💼 What drives the Job Market?")
+    st.title("💼 What Drives the Job Market?")
 
     st.markdown("""
-    Upload any CSV to explore job-market information, discover hiring
-    trends, compare salaries, and analyze important skills.
+    Upload a CSV file to explore data, discover trends, compare
+    salaries, analyze important skills, and train machine-learning models.
 
     The dashboard adapts to the columns in your uploaded dataset.
     """)
 
     st.info("Upload a CSV file from the sidebar to get started.")
 
-    st.markdown("### Dashboard features")
+    st.markdown("### Dashboard Features")
 
     c1, c2, c3 = st.columns(3)
 
     c1.metric("Analytics", "Interactive")
-    c2.metric("Input format", "CSV")
-    c3.metric("ML models", "4")
+    c2.metric("Input Format", "CSV")
+    c3.metric("ML Models", "4")
 
     st.markdown("""
     - Dataset profiling
@@ -277,12 +309,9 @@ def clean_salary(series):
 
 
 if salary_col is not None:
-
     df[salary_col] = clean_salary(df[salary_col])
 
-
 if date_col is not None:
-
     df[date_col] = pd.to_datetime(
         df[date_col],
         errors="coerce"
@@ -298,23 +327,21 @@ st.sidebar.success("Dataset loaded")
 st.sidebar.write("Records:", len(df))
 st.sidebar.write("Columns:", len(df.columns))
 
-if st.sidebar.button("Download sample template"):
+sample = pd.DataFrame({
+    "Job Title": ["Data Analyst", "Data Scientist"],
+    "Company": ["ABC Technologies", "XYZ Solutions"],
+    "Location": ["Mumbai", "Pune"],
+    "Salary": [800000, 1200000],
+    "Skills": ["Python, SQL, Excel", "Python, ML, SQL"],
+    "Date Posted": ["2026-09-15", "2026-09-18"]
+})
 
-    sample = pd.DataFrame({
-        "Job Title": ["Data Analyst", "Data Scientist"],
-        "Company": ["ABC Technologies", "XYZ Solutions"],
-        "Location": ["Mumbai", "Pune"],
-        "Salary": [800000, 1200000],
-        "Skills": ["Python, SQL, Excel", "Python, ML, SQL"],
-        "Date Posted": ["2026-09-15", "2026-09-18"]
-    })
-
-    st.sidebar.download_button(
-        "Save sample CSV",
-        sample.to_csv(index=False),
-        "job_market_template.csv",
-        "text/csv"
-    )
+st.sidebar.download_button(
+    "Download Sample Template",
+    data=sample.to_csv(index=False).encode("utf-8"),
+    file_name="job_market_template.csv",
+    mime="text/csv"
+)
 
 
 # --------------------------------------------------
@@ -365,7 +392,6 @@ def apply_filter(data, column, label):
     )
 
     if selected:
-
         data = data[
             data[column].astype(str).isin(selected)
         ]
@@ -430,7 +456,6 @@ def show_chart(series, title):
     st.subheader(title)
 
     if series is None or len(series) == 0:
-
         st.info("No data available for this chart.")
         return
 
@@ -473,11 +498,8 @@ if page == "Data Profile":
     missing = missing[missing > 0].sort_values(ascending=False)
 
     if len(missing):
-
         st.bar_chart(missing)
-
     else:
-
         st.success("No missing values found.")
 
     st.markdown("### Statistical Summary")
@@ -535,14 +557,12 @@ elif page == "Overview":
     col1, col2 = st.columns(2)
 
     with col1:
-
         show_chart(
             category_counts(title_col).head(10),
             "Top Job Titles"
         )
 
     with col2:
-
         show_chart(
             category_counts(company_col).head(10),
             "Top Hiring Companies"
@@ -551,21 +571,18 @@ elif page == "Overview":
     col1, col2 = st.columns(2)
 
     with col1:
-
         show_chart(
             category_counts(location_col).head(10),
             "Top Job Locations"
         )
 
     with col2:
-
         show_chart(
             get_skills(filtered_df).head(15),
             "Most In-Demand Skills"
         )
 
     if work_col:
-
         show_chart(
             category_counts(work_col),
             "Employment Type Distribution"
@@ -578,14 +595,13 @@ elif page == "Overview":
 
 elif page == "Model Performance":
 
-    st.title("What Drives the Job Market?")
+    st.title("🤖 Model Performance Comparison")
 
     st.write(
-        "Compare four regression models on the uploaded dataset. "
-        "Choose a numeric target column, such as salary, to begin."
+        "Train four regression models on your uploaded dataset. "
+        "The application compares their performance and identifies "
+        "the model with the lowest test-set RMSE."
     )
-
-    st.caption("📂 Data source: Uploaded CSV dataset")
 
     numeric_columns = df.select_dtypes(
         include=np.number
@@ -595,28 +611,31 @@ elif page == "Model Performance":
 
         st.warning(
             "No numeric columns were found. "
-            "A numeric target is required for regression."
+            "A numeric target column is required for regression."
         )
 
         st.stop()
 
     default_target = (
-        salary_col if salary_col in numeric_columns
+        salary_col
+        if salary_col in numeric_columns
         else numeric_columns[-1]
     )
 
     target = st.selectbox(
-        "Column to predict",
+        "Select the column you want to predict",
         numeric_columns,
         index=numeric_columns.index(default_target)
     )
 
     test_size = st.slider(
         "Test set percentage",
-        10, 40, 20
+        min_value=10,
+        max_value=40,
+        value=20
     )
 
-    if st.button("Train and Compare Models"):
+    if st.button("🚀 Train and Compare Models"):
 
         data = df.copy()
 
@@ -635,10 +654,12 @@ elif page == "Model Performance":
         if len(data) < 10:
 
             st.error(
-                "At least 10 valid rows are recommended for model comparison."
+                "At least 10 valid rows are recommended "
+                "for model comparison."
             )
 
             st.stop()
+
         X = data.drop(columns=[target])
         y = data[target]
 
@@ -647,35 +668,53 @@ elif page == "Model Performance":
             col for col in X.columns
             if col.lower().replace("_", "").replace(" ", "")
             in [
-                "id", "jobid", "companyid",
-                "employeeid", "recordid"
+                "id",
+                "jobid",
+                "companyid",
+                "employeeid",
+                "recordid"
             ]
         ]
 
-        X = X.drop(columns=id_columns, errors="ignore")
+        X = X.drop(
+            columns=id_columns,
+            errors="ignore"
+        )
 
         # Remove columns with only one unique value
-        X = X.loc[:, X.nunique(dropna=True) > 1]
+        X = X.loc[
+            :,
+            X.nunique(dropna=True) > 1
+        ]
 
-        # Keep supported data types
-        supported = X.select_dtypes(
+        # Keep supported feature types
+        supported_columns = X.select_dtypes(
             include=["number", "object", "category", "bool", "string"]
-        ).columns
+        ).columns.tolist()
 
-        X = X[supported]
+        X = X[supported_columns]
 
         if X.empty:
-            st.error("No usable input features were found.")
+
+            st.error(
+                "No usable input features were found. "
+                "Upload a dataset with more informative columns."
+            )
+
+            st.stop()
+
+        if y.nunique() < 2:
+
+            st.error(
+                "The selected target has fewer than two distinct "
+                "values. Choose another numeric column."
+            )
+
             st.stop()
 
         numeric_features = X.select_dtypes(
             include=np.number
         ).columns.tolist()
-
-        categorical_features = X.select_dtypes(
-            exclude=np.number
-        ).columns.tolist()
-            
 
         categorical_features = X.select_dtypes(
             exclude=np.number
@@ -722,11 +761,14 @@ elif page == "Model Performance":
 
         models = {
             "Ridge Regression": Ridge(alpha=1.0),
+
             "Linear Regression": LinearRegression(),
+
             "Random Forest": RandomForestRegressor(
                 n_estimators=100,
                 random_state=42
             ),
+
             "Decision Tree": DecisionTreeRegressor(
                 random_state=42
             )
@@ -736,8 +778,11 @@ elif page == "Model Performance":
         trained_models = {}
 
         progress = st.progress(0)
+        status = st.empty()
 
         for i, (name, model) in enumerate(models.items()):
+
+            status.write(f"Training {name}...")
 
             pipeline = Pipeline([
                 ("preprocessor", preprocessor),
@@ -762,7 +807,10 @@ elif page == "Model Performance":
                     )
                 )
 
-                r2 = r2_score(y_test, predictions)
+                r2 = r2_score(
+                    y_test,
+                    predictions
+                )
 
                 results.append({
                     "Model": name,
@@ -775,13 +823,22 @@ elif page == "Model Performance":
 
             except Exception as e:
 
-                st.warning(f"{name} failed: {e}")
+                st.warning(
+                    f"{name} could not be trained: {e}"
+                )
 
-            progress.progress((i + 1) / len(models))
+            progress.progress(
+                (i + 1) / len(models)
+            )
+
+        status.empty()
 
         if not results:
 
-            st.error("No models could be trained.")
+            st.error(
+                "No models could be trained. "
+                "Check your dataset and selected target."
+            )
 
             st.stop()
 
@@ -794,60 +851,161 @@ elif page == "Model Performance":
         st.session_state.training_data = X
         st.session_state.training_numeric_features = numeric_features
         st.session_state.training_categorical_features = categorical_features
+        st.session_state.training_test_size = test_size
 
-    # Show saved results after training
+        st.success("Model training and comparison completed!")
 
+    # Display saved results
     if st.session_state.model_results is not None:
 
-        results_df = st.session_state.model_results
+        results_df = st.session_state.model_results.copy()
 
-        st.markdown("### Model Leaderboard")
+        # Ensure the selected target matches the trained target
+        if target != st.session_state.training_target:
 
-        st.caption(
-            "Lower MAE and RMSE are better. Higher R² is generally better."
-        )
-
-        st.dataframe(
-            results_df.style.format({
-                "MAE": "{:,.2f}",
-                "RMSE": "{:,.2f}",
-                "R²": "{:.3f}"
-            }),
-            use_container_width=True
-        )
-
-        col1, col2 = st.columns(2)
-
-        with col1:
-
-            st.subheader("RMSE Comparison")
-
-            st.bar_chart(
-                results_df.set_index("Model")[["RMSE"]]
+            st.info(
+                "You selected a different target. "
+                "Click 'Train and Compare Models' to train models "
+                "for this target."
             )
 
-        with col2:
+        else:
 
-            st.subheader("R² Comparison")
-
-            st.bar_chart(
-                results_df.set_index("Model")[["R²"]]
+            valid_results = results_df.dropna(
+                subset=["RMSE", "MAE", "R²"]
             )
 
-        best_model = results_df.sort_values(
-            "RMSE"
-        ).iloc[0]
+            if valid_results.empty:
 
-        st.success(
-            f"Lowest RMSE: {best_model['Model']} "
-            f"({best_model['RMSE']:,.2f})"
-        )
+                st.error("No valid model results are available.")
 
-        st.caption(
-            "Model performance depends on the dataset. "
-            "A negative R² indicates performance worse than "
-            "predicting the test-set mean."
-        )
+            else:
+
+                # Lowest RMSE is the primary selection metric
+                best_model = valid_results.loc[
+                    valid_results["RMSE"].idxmin()
+                ]
+
+                st.markdown("---")
+                st.markdown("## 🏆 Best Performing Model")
+
+                st.success(
+                    f"🏆 Best Model: {best_model['Model']}"
+                )
+
+                st.caption(
+                    "Selected using the lowest RMSE on the test dataset. "
+                    "A lower RMSE means smaller prediction errors "
+                    "on this test set."
+                )
+
+                col1, col2, col3 = st.columns(3)
+
+                col1.metric(
+                    "Best Model",
+                    best_model["Model"]
+                )
+
+                col2.metric(
+                    "Lowest RMSE",
+                    f"{best_model['RMSE']:,.2f}"
+                )
+
+                col3.metric(
+                    "R² Score",
+                    f"{best_model['R²']:.3f}"
+                )
+
+                st.markdown("### 📊 Model Leaderboard")
+
+                leaderboard = valid_results.sort_values(
+                    by="RMSE",
+                    ascending=True
+                ).reset_index(drop=True)
+
+                leaderboard.index = leaderboard.index + 1
+                leaderboard.index.name = "Rank"
+
+                st.dataframe(
+                    leaderboard.style.format({
+                        "MAE": "{:,.2f}",
+                        "RMSE": "{:,.2f}",
+                        "R²": "{:.3f}"
+                    }),
+                    use_container_width=True
+                )
+
+                st.markdown("### 📉 RMSE Comparison")
+
+                rmse_chart = valid_results.set_index(
+                    "Model"
+                )[["RMSE"]].sort_values(
+                    "RMSE",
+                    ascending=True
+                )
+
+                st.bar_chart(rmse_chart)
+
+                st.caption(
+                    "The shortest bar represents the model "
+                    "with the lowest RMSE."
+                )
+
+                st.markdown("### 📈 R² Score Comparison")
+
+                r2_chart = valid_results.set_index(
+                    "Model"
+                )[["R²"]].sort_values(
+                    "R²",
+                    ascending=False
+                )
+
+                st.bar_chart(r2_chart)
+
+                st.caption(
+                    "Higher R² is generally better. A negative "
+                    "R² means the model performed worse than "
+                    "predicting the test-set mean."
+                )
+
+                st.markdown("### 📝 Final Result")
+
+                st.write(
+                    f"Among the successfully evaluated models, "
+                    f"**{best_model['Model']}** achieved the "
+                    f"lowest RMSE of **{best_model['RMSE']:,.2f}**."
+                )
+
+                st.write(
+                    f"Its MAE is **{best_model['MAE']:,.2f}** "
+                    f"and its R² score is **{best_model['R²']:.3f}**."
+                )
+
+                if best_model["R²"] < 0:
+
+                    st.warning(
+                        "Although this model has the lowest RMSE "
+                        "among the tested models, its negative R² "
+                        "indicates that it performed worse than the "
+                        "test-set mean baseline. Improve the dataset "
+                        "or features before relying on predictions."
+                    )
+
+                elif best_model["R²"] < 0.5:
+
+                    st.info(
+                        "The best model has limited explanatory "
+                        "performance. Consider improving the "
+                        "features, data quality, or model settings."
+                    )
+
+                else:
+
+                    st.success(
+                        "The best model explains a meaningful "
+                        "proportion of the target variation "
+                        "on this test set."
+                    )
 
 
 # --------------------------------------------------
@@ -856,7 +1014,7 @@ elif page == "Model Performance":
 
 elif page == "Predictor":
 
-    st.title("Household / Job Market Predictor")
+    st.title("🔮 Numeric Target Predictor")
 
     if not st.session_state.trained_models:
 
@@ -880,7 +1038,10 @@ elif page == "Predictor":
     numeric_features = st.session_state.training_numeric_features
     categorical_features = st.session_state.training_categorical_features
 
-    st.markdown("### Enter feature values")
+    st.markdown(
+        f"### Enter values to predict "
+        f"{st.session_state.training_target}"
+    )
 
     input_values = {}
 
@@ -901,7 +1062,7 @@ elif page == "Predictor":
 
                 if values.empty:
 
-                    input_values[feature] = 0
+                    input_values[feature] = 0.0
 
                 else:
 
@@ -919,7 +1080,8 @@ elif page == "Predictor":
                             feature,
                             min_value=minimum,
                             max_value=maximum,
-                            value=median
+                            value=median,
+                            key="predict_" + feature
                         )
 
             else:
@@ -936,14 +1098,15 @@ elif page == "Predictor":
 
                     input_values[feature] = st.selectbox(
                         feature,
-                        values
+                        values,
+                        key="predict_" + feature
                     )
 
                 else:
 
                     input_values[feature] = ""
 
-    if st.button("Predict"):
+    if st.button("🔮 Predict"):
 
         input_df = pd.DataFrame(
             [input_values],
@@ -963,7 +1126,7 @@ elif page == "Predictor":
                 f"{prediction:,.2f}"
             )
 
-            st.write("Model:", selected_model)
+            st.write("Model used:", selected_model)
 
         except Exception as e:
 
@@ -976,7 +1139,7 @@ elif page == "Predictor":
 
 elif page == "Statistics":
 
-    st.title("Statistical Analysis")
+    st.title("📊 Statistical Analysis")
 
     numeric_df = filtered_df.select_dtypes(
         include=np.number
@@ -1001,7 +1164,9 @@ elif page == "Statistics":
 
             corr = numeric_df.corr()
 
-            fig, ax = plt.subplots(figsize=(10, 6))
+            fig, ax = plt.subplots(
+                figsize=(10, 6)
+            )
 
             image = ax.imshow(
                 corr,
@@ -1011,8 +1176,13 @@ elif page == "Statistics":
                 vmax=1
             )
 
-            ax.set_xticks(range(len(corr.columns)))
-            ax.set_yticks(range(len(corr.columns)))
+            ax.set_xticks(
+                range(len(corr.columns))
+            )
+
+            ax.set_yticks(
+                range(len(corr.columns))
+            )
 
             ax.set_xticklabels(
                 corr.columns,
@@ -1026,10 +1196,12 @@ elif page == "Statistics":
             )
 
             ax.set_facecolor("#0e1117")
-
             fig.patch.set_facecolor("#0e1117")
 
-            fig.colorbar(image, ax=ax)
+            fig.colorbar(
+                image,
+                ax=ax
+            )
 
             fig.tight_layout()
 
@@ -1040,7 +1212,8 @@ elif page == "Statistics":
         else:
 
             st.info(
-                "At least two numeric columns are required for correlation."
+                "At least two numeric columns are required "
+                "for correlation."
             )
 
         selected_column = st.selectbox(
@@ -1048,7 +1221,9 @@ elif page == "Statistics":
             numeric_df.columns
         )
 
-        st.subheader(f"Distribution: {selected_column}")
+        st.subheader(
+            f"Distribution: {selected_column}"
+        )
 
         fig, ax = plt.subplots()
 
@@ -1060,6 +1235,7 @@ elif page == "Statistics":
 
         ax.set_xlabel(selected_column)
         ax.set_ylabel("Frequency")
+
         ax.set_facecolor("#0e1117")
         fig.patch.set_facecolor("#0e1117")
 
@@ -1078,7 +1254,7 @@ elif page == "Statistics":
 
 elif page == "Explore Data":
 
-    st.title("Explore Data")
+    st.title("🔎 Explore Data")
 
     search = st.text_input(
         "Search across all columns"
@@ -1099,7 +1275,10 @@ elif page == "Explore Data":
 
         explore_df = explore_df[mask]
 
-    st.write("Matching records:", len(explore_df))
+    st.write(
+        "Matching records:",
+        len(explore_df)
+    )
 
     st.dataframe(
         explore_df,
@@ -1108,7 +1287,9 @@ elif page == "Explore Data":
 
     st.download_button(
         "Download Filtered CSV",
-        data=explore_df.to_csv(index=False).encode("utf-8"),
+        data=explore_df.to_csv(
+            index=False
+        ).encode("utf-8"),
         file_name="job_market_filtered.csv",
         mime="text/csv"
     )
